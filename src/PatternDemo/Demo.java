@@ -19,6 +19,7 @@ public class Demo {
         InfoImp<String> obj3 = new InfoImp<>("hh");
 
         System.out.println("Length Of String: " + obj.getVar().length());
+        System.out.println(obj.getVar());
         System.out.println(obj2.getVar());
         System.out.println(obj3.getVar());
 
