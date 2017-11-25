@@ -65,6 +65,29 @@ public class StringTest {
         System.out.println(0.99999999f==1f);
 
 
+        String ip ="1.2.3.4,2.3.4.1";
+        String ip2 ="";
+        String []ips =  ip.split(",");
+        String []ips2 =  ip2.split(",");
+        System.out.println(ips[0]);
+        System.out.println(ips2[0]);
+
+//        String test = ips[0];
+//        System.out.println(test);
+//        test = "hh";
+//        System.out.println(ips[0]);
+
+        String []ips3 =  ips;
+
+        System.out.println(ips3[0]);
+
+        ips3[0] = "hh";
+        System.out.println(ips[0]);
+
+
+
+
+
     }
 
 

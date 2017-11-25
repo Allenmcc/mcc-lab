@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -15,11 +16,27 @@ public class mapTest {
         map.put("userID", "2");
         map.put("email", "mcc@qq.com");
 
+        boolean accessOrder =true;
+        Map<String,String > linkedMap = new LinkedHashMap<>(20, .80f,accessOrder);
+//        Map<String,String > linkedMap = new LinkedHashMap<>();
+        linkedMap.put("username", "mcc");
+        linkedMap.put("passWord", "123");
+        linkedMap.put("userID", "1");
+        linkedMap.put("userID", "2");
+        linkedMap.put("email", "mcc@qq.com");
+
+        System.out.println(map.get("email"));
+
 
         //第一种：普遍使用，二次取值  效率低
         System.out.println("通过Map.keySet遍历key和value：");
         for (String key : map.keySet()) {
             System.out.println(key + "---->" + map.get(key));
+        }
+
+        System.out.println("LinkedHashMap通过Map.keySet遍历key和value：");
+        for (String key : linkedMap.keySet()) {
+            System.out.println(key + "---->" + linkedMap.get(key));
         }
 
         //第二种
