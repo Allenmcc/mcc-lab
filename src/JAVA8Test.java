@@ -17,9 +17,10 @@ public class JAVA8Test {
 //                map(String::toUpperCase).
 //                collect(Collectors.toList());
 
-        List<Integer> nums = Arrays.asList(1, 2, 3, 4);
+//        List<Integer> nums = Arrays.asList(1, 2, 3, 4);
+        List<Integer> nums = new ArrayList<>();
         List<Integer> squareNums = nums.stream().
-                map(n -> n * n).
+                map(n -> n * n).filter(p->p.equals(2)).
                 collect(Collectors.toList());
 
 //        Stream.of(nums).map(n -> n * n).collect(Collectors.toList());

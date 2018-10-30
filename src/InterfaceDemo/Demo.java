@@ -15,6 +15,13 @@ public class Demo {
 
         UserServiceImpl2 userServiceImpl2 = new UserServiceImpl2();
         userServiceImpl2.regist();
+        UserService userService3 =   new UserService() {
+            @Override
+            public void regist() {
+                // you impl
+
+            }
+        };
     }
 }
 

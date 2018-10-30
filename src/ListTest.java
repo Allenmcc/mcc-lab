@@ -13,7 +13,7 @@ public class ListTest {
 
     public static void main(String[] args) {
 //
-//        List<Integer> list1 = new ArrayList<>();
+        List<Integer> list1 = null;
 //        list1.add(1);
 //        list1.add(2);
 //        list1.add(3);
@@ -22,12 +22,24 @@ public class ListTest {
 //        list1.add(6);
 //        list1.add(7);
 //        List<Integer> list2 = new ArrayList<>();
+//        for (Integer aa:list1){
+//            list2.add(aa);
+//        }
+////        list2 = list1;
+//        list2.add(8);
+
 //        list2.add(4);
 //        list2.add(5);
+//        list2.add(9);
 //        List<Integer> list3 = new ArrayList<>();
 //        list3.add(6);
 //        list3.add(7);
 //        list3.add(8);
+
+//        list1.addAll(list2);
+//        list1.removeAll(list2);
+//        System.out.println(list1.size());
+
 //
 //        List<List<Integer>> list4 = new ArrayList<>();
 //        list4.add(list2);
@@ -84,24 +96,35 @@ public class ListTest {
 //        System.out.println();
 //
 
-        List<String> aaa = new ArrayList<String>();
-        aaa.add("1");
-        aaa.add("2");
-        aaa.add("3");
-        aaa.add("4");
-
-        for (String temp : aaa){
-            if("1".equals(temp)) {
-                aaa.remove(temp);
-            }
-        }
-
-        for (String temp : aaa){
+//        List<String> aaa = new ArrayList<String>();
+//        aaa.add("1");
+//        aaa.add("2");
+//        aaa.add("3");
+//        aaa.add("4");
+//
+//
+//
+//        for (String temp : aaa){
 //            if("1".equals(temp)) {
-            System.out.println(temp);
+//                aaa.remove(temp);
 //            }
-        }
+//        }
+//
+//        for (String temp : aaa){
+////            if("1".equals(temp)) {
+//            System.out.println(temp);
+////            }
+//        }
 
+        String str = "i love u";//测试用
+        String[] strs = {"i like u", "i miss u"};//测试用
+        /**
+         * asList：返回一个不可变的List
+         * 其中包含指定的第一个元素和附加的元素数组组成
+         * 修改这个数组将反映到返回的List上
+         */
+        List<String> list = Lists.asList(str, strs);
+        System.out.println(list); //[i love u, i like u, i miss u]
 
     }
 }

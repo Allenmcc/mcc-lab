@@ -1,3 +1,5 @@
+import org.apache.commons.lang.StringUtils;
+
 /**
  * Created by danny on 2017/1/18.
  */
@@ -85,6 +87,58 @@ public class StringTest {
         System.out.println(ips[0]);
 
 
+
+        String number = "1234A";
+        System.out.println(number.toLowerCase());
+
+
+
+        String ss = "/brandsite/brand/501/223760";
+        int index = ss.lastIndexOf('/');
+        String idStr = ss.substring(index+1);
+        System.out.println(Integer.valueOf(idStr));
+
+        String s2 = "2018-03-01";
+        System.out.println(s2.replaceAll("-",""));
+
+
+        String http= "http://";
+        System.out.print(http.replace("http:","https:"));
+
+
+        String b= "";
+        System.out.println(StringUtils.isNotBlank(b));
+
+        String aaa ="hh";
+        String bbb ="hh";
+        System.out.println(aaa.equals(bbb));
+        System.out.println(aaa == bbb );
+
+        String str11 = "高小天";
+        String str22 = "高小天";
+        System.out.println(str11==str22);//true 享元模式
+
+        String str3 = new String("高大天");
+        String str4 = new String("高大天");
+        System.out.println(str3==str4);//false
+
+        String ss1 = "imooc";
+        String ss2 = "imooc";
+
+        //定义字符串s3，保存“I love”和s1拼接后的内容
+
+        String ss3="I love"+ss1;
+        // 比较字符串ss1和ss2
+        // imooc为常量字符串，多次出现时会被编译器优化，只创建一个对象 享元模式
+        System.out.println("s1和s2内存地址相同吗？" + (ss1 == ss2));
+
+        //比较字符串ss1和ss3
+        System.out.println("s1和s3内存地址相同吗？" + (ss1 == ss3 ));
+
+        String ss4 = "I love " + ss1;
+        //比较字符串s4和s3
+        // ss1是变量，ss4在运行时才知道具体值，所以ss3和ss4是不同的对象
+        System.out.println("s3和s4内存地址相同吗？" + (ss4 == ss3));
 
 
 
