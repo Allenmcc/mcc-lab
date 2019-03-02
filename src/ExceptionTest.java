@@ -20,7 +20,7 @@ public class ExceptionTest {
     public static String test() {
         try {
             System.out.println("try block");
-            if (1 == 2) {
+            if (1 == 1) {
                 throw new Exception();
             }
 

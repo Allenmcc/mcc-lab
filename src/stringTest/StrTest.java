@@ -1,8 +1,12 @@
+package stringTest;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by danny on 16/6/3.
+ *
+ * https://www.cnblogs.com/dolphin0520/p/3778589.html
  */
 public class StrTest {
 
@@ -33,6 +37,23 @@ public class StrTest {
         }
 
 
+        //Immutable
+        String immuStr = "hello";
+        String immuStr2 = "hello";
+        immuStr2 = immuStr+ "ni";
+        System.out.println(immuStr);
+        System.out.println(immuStr2);
+
+
+        String a = "hello2";
+        final String b = getHello();
+        String c = b + 2;
+        System.out.println((a == c));
+
+    }
+
+    public static String getHello() {
+        return "hello";
     }
 
     private static  int test(int a){

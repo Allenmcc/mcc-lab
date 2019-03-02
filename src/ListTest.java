@@ -1,9 +1,6 @@
 import com.google.common.collect.Lists;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by danny on 16/8/24.
@@ -21,7 +18,10 @@ public class ListTest {
 //        list1.add(5);
 //        list1.add(6);
 //        list1.add(7);
-//        List<Integer> list2 = new ArrayList<>();
+        List<Integer> list2 = new ArrayList<>();
+        System.out.println(list1+"");
+        System.out.println(list2.toString());
+        System.out.println(list2+"");
 //        for (Integer aa:list1){
 //            list2.add(aa);
 //        }
@@ -125,6 +125,34 @@ public class ListTest {
          */
         List<String> list = Lists.asList(str, strs);
         System.out.println(list); //[i love u, i like u, i miss u]
+
+        List<String> list11 =new ArrayList<String>();
+        list11.add("A");
+        list11.add("B");
+        list11.add("D");
+        List<String> list22 =new ArrayList<String>();
+        list22.add("B");
+        list22.add("C");
+
+//        System.out.println(list11.removeAll(list22));
+
+        System.out.println(list11.retainAll(list22));
+        System.out.println(list11);
+        System.out.println(list22);
+
+
+        Iterator<String> it = list11.iterator();
+        while(it.hasNext()){
+            String x = it.next();
+//            if(x.equals("A")){
+            if(list22.contains(x)){
+                it.remove();
+            }
+        }
+
+        System.out.println(list11);
+
+
 
     }
 }

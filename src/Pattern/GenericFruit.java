@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * Created by chunchen.meng on 2018/6/9.
+ * https://www.cnblogs.com/coprince/p/8603492.html
  */
 public class GenericFruit {
 
@@ -15,6 +16,7 @@ public class GenericFruit {
     }
 
     class Fruit{
+            int i = 2;
         @Override
         public String toString() {
             return "fruit";
@@ -24,6 +26,7 @@ public class GenericFruit {
     class Apple extends Fruit{
         @Override
         public String toString() {
+            i = 3;
             return "apple";
         }
     }

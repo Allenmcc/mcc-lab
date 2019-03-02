@@ -2,6 +2,8 @@ package Guava;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
+import lombok.Builder;
+import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,5 +39,33 @@ public class Partion {
             }
         });
         System.out.println(pageList.toString());
+
+        Example example2 = new Example(1,"s");
+
+
+        Example example = Example.builder().bar("str").foo(1).build();
+        System.out.println(example.getBar());
+
+
+
+
+
+//     InnerClass innerClass =  InnerClass.builder().bar("in").foo(23).build();
+//     System.out.println(innerClass.getBar());
+
+
+        Partion partion = new Partion();
+
+        InnerClass innerClass = partion.new InnerClass();
+        innerClass.setBar("1212");
+
+        System.out.println(innerClass.getBar());
+    }
+
+//    @Builder
+    @Data
+    public   class InnerClass {
+        private int foo;
+        private String bar;
     }
 }
