@@ -1,6 +1,7 @@
 package money;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  * Created by chunchen.meng on 2019/2/22.
@@ -33,6 +34,14 @@ public class DoubleTest {
         String aaa = "hello2";
         String bbb = "hello" + 2;
         System.out.println((aaa == bbb));
+
+
+        BigDecimal d1 = new BigDecimal("5.225").setScale(2, RoundingMode.HALF_UP);
+        BigDecimal dd1 = new BigDecimal(5.225).setScale(2, RoundingMode.HALF_UP);
+        BigDecimal d2 = new BigDecimal(5.2251).setScale(2, RoundingMode.HALF_UP);
+        System.out.println(d1); //输出5.23
+        System.out.println(dd1); //输出5.22
+        System.out.println(d2); //输出5.23
 
     }
 

@@ -8,6 +8,7 @@ import com.google.common.collect.Lists;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Created by chunchen.meng on 2018/3/30.
@@ -15,26 +16,35 @@ import java.util.Map;
 public class FastJsonTest {
 
     public static void main(String[] args){
-        String jsonStr = "[{\"JACKIE_ZHANG\":\"张学友\"},{\"ANDY_LAU\":\"刘德华\"},{\"LIMING\":\"黎明\"},{\"Aaron_Kwok\":\"郭富城\"}]" ;
-        //做5次测试
-        for(int i=0,j=5;i<j;i++)
-        {
-            JSONArray jsonArray = JSONArray.parseArray(jsonStr);
-
-            for(int k=0;k<jsonArray.size();k++){
-                System.out.print(jsonArray.get(k) + "\t");
-            }
-            System.out.println();//用来换行
-        }
+//        String jsonStr = "[{\"JACKIE_ZHANG\":\"张学友\"},{\"ANDY_LAU\":\"刘德华\"},{\"LIMING\":\"黎明\"},{\"Aaron_Kwok\":\"郭富城\"}]" ;
+//        //做5次测试
+//        for(int i=0,j=5;i<j;i++)
+//        {
+//            JSONArray jsonArray = JSONArray.parseArray(jsonStr);
+//
+//            for(int k=0;k<jsonArray.size();k++){
+//                System.out.print(jsonArray.get(k) + "\t");
+//            }
+//            System.out.println();//用来换行
+//        }
 
 
         Map<Integer,String>  map = new HashMap<>();
+
         map.put(1,"a");
         map.put(2,"b");
         map.put(3,"b");
         map.put(4,"d");
         map.put(5,"e");
         String str =  JSON.toJSONString(map);
+
+
+
+
+        System.out.println(map);
+
+        map.remove(5);
+        System.out.println(map);
         System.out.println(str);
 
         JSONObject js = JSONObject.parseObject(str);

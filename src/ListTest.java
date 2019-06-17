@@ -22,6 +22,17 @@ public class ListTest {
         System.out.println(list1+"");
         System.out.println(list2.toString());
         System.out.println(list2+"");
+        List<Integer> list4 =   Lists.newArrayList(1,2);
+        System.out.println(list4);
+
+        List<Integer> aa = null;
+        List<Integer> bb = Lists.newArrayList();
+        List<Integer> bbb = new ArrayList<>();
+        List<Integer> cc = new ArrayList<Integer>(){{addAll(bbb);}};
+        System.out.println("test"+ cc);
+
+
+
 //        for (Integer aa:list1){
 //            list2.add(aa);
 //        }
@@ -50,10 +61,13 @@ public class ListTest {
 //        System.out.println(list1.indexOf(3));
 //
 //
-//        Map<Integer, String> map = new HashMap<>();
-//        map.put(1, "aa");
-//        map.put(2, "ab");
-//        map.put(3, "ccc");
+        Map<Long, String> map = new HashMap<>();
+        map.put(1L, "aa");
+        map.put(2L, "ab");
+        map.put(3L, "ccc");
+
+        Long test = 1L;
+       System.out.println(map.get(test));
 //        List testList = Lists.newArrayList(23);
 //        List testMap = Lists.newArrayList(map.keySet());
 //        System.out.println(testList);

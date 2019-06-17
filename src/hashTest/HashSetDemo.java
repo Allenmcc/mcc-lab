@@ -14,6 +14,7 @@ public class HashSetDemo {
         set.add(new Person("李四", 19));
         set.add(new Person("王五", 22));
         set.add(new Person("张三", 21));
+        set.add(new Person("张三", 23));
         sop(set);
     }
     private static void sop(Collection set) {

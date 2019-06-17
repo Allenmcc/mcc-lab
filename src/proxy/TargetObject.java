@@ -9,7 +9,7 @@ public class TargetObject implements ProxyInterFace {
     @Override
     public void proxyMethod()
     {
-        System.out.println("我被代理了，哈哈！");
+        System.out.println("TargetObject 我被代理了，哈哈！");
     }
 
 }

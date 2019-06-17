@@ -6,6 +6,7 @@ import java.lang.reflect.Proxy;
 
 /**
  * Created by chunchen.meng on 2018/10/12.
+ * 目的：动态生成代理类？为啥要动态生成
  */
 public class LiuDeHuaProxy {
     //设计一个类变量记住代理类要代理的目标对象
@@ -42,7 +43,7 @@ public class LiuDeHuaProxy {
                     @Override
                     public Object invoke(Object proxy, Method method,
                                          Object[] args) throws Throwable {
-                        //如果调用的是代理对象的sing方法
+                        //如果调用的是代理对象的sing方法，代理指定menthod，灵活性>静态代理
                         if (method.getName().equals("sing")) {
                             System.out.println("我是他的经纪人，要找他唱歌得先给十万块钱！！");
                             //已经给钱了，经纪人自己不会唱歌，就只能找刘德华去唱歌！

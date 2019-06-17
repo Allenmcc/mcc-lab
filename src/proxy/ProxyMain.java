@@ -18,8 +18,12 @@ public class ProxyMain {
 
         //转换成InvocationHandler
         InvocationHandler handler = proxyObject;
-        //执行代码任务
+        //执行代码任务  生成代理类
         Object proxy = Proxy.newProxyInstance(proxyInterface.getClass().getClassLoader(), proxyInterface.getClass().getInterfaces(), handler);
+
+        //com.sun.proxy.$Proxy0
+        System.out.println(proxy.getClass().getName());
+
         //转换成目标对象，调用目标对象的方法
         ((ProxyInterFace) proxy).proxyMethod();
     }
