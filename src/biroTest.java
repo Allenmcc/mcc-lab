@@ -1,5 +1,3 @@
-import java.util.Locale;
-
 /**
  * Created by danny on 16/1/12.
  */
@@ -28,8 +26,8 @@ public class biroTest {
 
     public static void main(String arg[]){
 
-//        char[] buf = new char[] { 'a', 'b', 'c','d'};
-//        permutation(buf, 0, 3);
+        char[] buf = new char[] { 'a', 'b', 'c','d'};
+        permutation(buf, 0, 3);
         Integer a = 10;
 //        long b = a;
 //        Long b = (Long)a;

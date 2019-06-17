@@ -74,7 +74,7 @@ public class ListTest {
 //        System.out.println(testMap);
 //
 //
-//        Person a = new Person();
+//        listTest.Person a = new listTest.Person();
 //        a.age = 1;
 //        a.setScore(list1);
 //        System.out.println(a.score);
@@ -82,8 +82,8 @@ public class ListTest {
 //        a.setScore(list2);
 //        System.out.println(a.score);
 //
-//        List<Person> peopleList = new ArrayList<>();
-//        Person a1 = new Person();
+//        List<listTest.Person> peopleList = new ArrayList<>();
+//        listTest.Person a1 = new listTest.Person();
 //        a1.age = 200;
 //        peopleList.add(a1);
 //        a1.age =100;

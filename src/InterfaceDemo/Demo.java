@@ -1,7 +1,5 @@
 package InterfaceDemo;
 
-import PatternDemo.Info;
-
 /**
  * Created by danny on 2017/2/14.
  */

@@ -11,8 +11,8 @@ public class RegTest {
 ////        String line = "This order w3as placed for ! OK?";
 //        String pattern = "(.*)(\\d+)(.*)";
 //
-//        // 创建 Pattern 对象
-//        Pattern r = Pattern.compile(pattern);
+//        // 创建 pattern 对象
+//        pattern r = pattern.compile(pattern);
 //
 //        // 现在创建 matcher 对象
 //        Matcher m = r.matcher(line);
@@ -26,7 +26,7 @@ public class RegTest {
 //        }
         Pattern pattern = Pattern.compile("^\\d+\\s*(\\s*,?\\s*\\d+)*,?\\s*$");
         Pattern pattern2 = Pattern.compile("^\\d+\\s*(\\s*,?\\s*\\d+)*,?\\s*$");
-//        Pattern pattern = Pattern.compile("^\\d+\\s*(\\s*,\\s*\\d+)*,?$");
+//        pattern pattern = pattern.compile("^\\d+\\s*(\\s*,\\s*\\d+)*,?$");
 
         Matcher matcher = pattern.matcher("2396591 44010008, 33");
 //        System.out.println(matcher.matches());

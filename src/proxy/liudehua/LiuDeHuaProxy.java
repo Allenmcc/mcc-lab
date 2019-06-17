@@ -15,7 +15,7 @@ public class LiuDeHuaProxy {
     /**
      * 设计一个方法生成代理对象
      * @Method: getProxy
-     * @Description: 这个方法返回刘德华的代理对象：Person person = LiuDeHuaProxy.getProxy();//得到一个代理对象
+     * @Description: 这个方法返回刘德华的代理对象：listTest.Person person = LiuDeHuaProxy.getProxy();//得到一个代理对象
      * @Anthor:孤傲苍狼
      *
      * @return 某个对象的代理对象
