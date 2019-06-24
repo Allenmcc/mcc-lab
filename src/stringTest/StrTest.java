@@ -32,7 +32,7 @@ public class StrTest {
         if(3!=3){
             System.out.println("3!=2");
 
-        }else {
+        }else if(3>4){
             System.out.println("else");
         }
 
