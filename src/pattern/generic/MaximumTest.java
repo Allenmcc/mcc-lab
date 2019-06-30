@@ -7,6 +7,7 @@ package pattern.generic;
  要声明一个有界的类型参数，首先列出类型参数的名称，后跟extends关键字，最后紧跟它的上界。
  */
 public class MaximumTest {
+    
     // 比较三个值并返回最大值
     public static <T extends Comparable<T>> T maximum(T x, T y, T z)
     {
