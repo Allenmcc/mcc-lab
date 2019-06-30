@@ -109,6 +109,24 @@ public class StringTest {
 
 
 
+        String t1 = "";
+        String t2 = "";
+
+        System.out.println(t1 == t2);
+
+        System.out.println(isValidPic(""));
+
+
+
+    }
+
+    public static boolean isValidPic(String url) {
+
+        if (url == null || url == "") {
+            return true;
+        }
+
+        return url.contains("");
     }
 
 

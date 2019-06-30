@@ -1,6 +1,7 @@
 package listTest;
 
 import com.google.common.collect.Lists;
+import org.springframework.beans.factory.ListableBeanFactory;
 
 import java.util.*;
 
@@ -12,16 +13,19 @@ public class ListTest {
 
     public static void main(String[] args) {
 //
-        List<Integer> list1 = null;
-//        list1.add(1);
-//        list1.add(2);
-//        list1.add(3);
-//        list1.add(4);
-//        list1.add(5);
-//        list1.add(6);
-//        list1.add(7);
+        List<Integer> list1 = new ArrayList<>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+        list1.add(4);
+        list1.add(5);
+        list1.add(6);
+        list1.add(7);
+
+        System.out.println(list1);
+        System.out.println(list1.toArray()[3]);
+
         List<Integer> list2 = new ArrayList<>();
-        System.out.println(list1+"");
         System.out.println(list2.toString());
         System.out.println(list2+"");
         List<Integer> list4 =   Lists.newArrayList(1,2);
@@ -70,67 +74,7 @@ public class ListTest {
 
         Long test = 1L;
        System.out.println(map.get(test));
-//        List testList = Lists.newArrayList(23);
-//        List testMap = Lists.newArrayList(map.keySet());
-//        System.out.println(testList);
-//        System.out.println(testMap);
-//
-//
-//        listTest.Person a = new listTest.Person();
-//        a.age = 1;
-//        a.setScore(list1);
-//        System.out.println(a.score);
-//
-//        a.setScore(list2);
-//        System.out.println(a.score);
-//
-//        List<listTest.Person> peopleList = new ArrayList<>();
-//        listTest.Person a1 = new listTest.Person();
-//        a1.age = 200;
-//        peopleList.add(a1);
-//        a1.age =100;
-//        System.out.println(peopleList.get(0).age);
-//
-//
-//        int aa =1111;
-//        List<Integer> list5 = new ArrayList<>();
-//        list5.add(aa);
-//        aa = 2222;
-//
-//        System.out.println(list5.get(0));
-//
-//
-//
-//        long one = 3;
-//        long two = 100;
-//        double result = one*100/two;
-//
-//        if(result<=3){
-//            System.out.println("前3");
-//
-//        }
-//        System.out.println();
-//
 
-//        List<String> aaa = new ArrayList<String>();
-//        aaa.add("1");
-//        aaa.add("2");
-//        aaa.add("3");
-//        aaa.add("4");
-//
-//
-//
-//        for (String temp : aaa){
-//            if("1".equals(temp)) {
-//                aaa.remove(temp);
-//            }
-//        }
-//
-//        for (String temp : aaa){
-////            if("1".equals(temp)) {
-//            System.out.println(temp);
-////            }
-//        }
 
         String str = "i love u";//测试用
         String[] strs = {"i like u", "i miss u"};//测试用
@@ -167,6 +111,30 @@ public class ListTest {
         }
 
         System.out.println(list11);
+
+
+        /**
+         * 1.ArrayList是Array的复杂版本；
+         2.存储的数据类型：Array只能存储相同数据类型的数据，而ArrayList可以存储不同数据类型的数据；
+         3.长度的可变：Array的长度是固定的，而ArrayList的长度是可变的。
+         */
+
+        int[]d = new int[2];
+        Integer dd[]  = new Integer[2];
+        //数组->list
+        List<Integer> listArray[] = new ArrayList[5];
+        List<Integer > testt = new ArrayList<>(5);
+
+        List<List<Integer>> listArray2 =Lists.newArrayList();
+
+        listArray[1] = new ArrayList<>();
+        listArray[1].add(12);
+        listArray[1].add(13);
+        listArray[1].add(14);
+        listArray[1].add(15);
+        listArray[1].add(16);
+
+        System.out.println(listArray[1]);
 
 
 
