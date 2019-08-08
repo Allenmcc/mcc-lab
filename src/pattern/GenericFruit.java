@@ -11,7 +11,6 @@ public class GenericFruit {
             System.out.println("泛型测试t is " + t);
         }
     }
-
     class Fruit{
             int i = 2;
         @Override

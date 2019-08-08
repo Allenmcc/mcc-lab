@@ -13,10 +13,10 @@ import java.util.Arrays;
  * 给一个数组和目标值，求数组中和为目标值的所有组合，1.数组中每个值可以重复使用2.不允许重复。
  * https://blog.csdn.net/Somnus_k/article/details/82054645
  */
-public class Solution {
+public class ArraySum {
 
     public static void main(String[] args) {
-        Solution solution =  new Solution();
+        ArraySum solution =  new ArraySum();
         int arr[] = {2,6,3,7};
         System.out.println(solution.combinationSum(arr,9));
     }
@@ -44,6 +44,7 @@ public class Solution {
             return;
         }
         if (sum == 0 && !list.contains(arrayList)) {
+            //new 对象，直接添加是引用，值会变
             list.add(new ArrayList<Integer>(arrayList));
             return;
         }
@@ -52,7 +53,7 @@ public class Solution {
         for (int i = index; i < arr.length; i++) {
             //加入一个元素
             arrayList.add(arr[i]);
-            //递归 (允许重复)
+            //递归 (允许重复)  递归参数要思考清楚（开始坐标、目标总和）
             dfs(arr, i, sum - arr[i], arrayList);
             //(不允许重复)
 //            dfs(arr, i+1, sum - arr[i], arrayList);

@@ -3,7 +3,7 @@ package threadTest;
 /**
  * Created by chunchen.meng on 2019/5/24.
  */
-public class Demo {
+public class RunAndStartTest {
     public static void main(String[] args) {
         Thread mythread=new MyThread("mythread");
 

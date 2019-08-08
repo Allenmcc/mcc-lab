@@ -14,6 +14,7 @@ public class ListTest {
     public static void main(String[] args) {
 //
         List<Integer> list1 = new ArrayList<>();
+        List<Integer> list222 = new ArrayList<Integer>(){{add(1);}};
         list1.add(1);
         list1.add(2);
         list1.add(3);
@@ -23,6 +24,17 @@ public class ListTest {
         list1.add(7);
 
         System.out.println(list1);
+
+
+        //通俗一点的说，就像洗牌一样，随机打乱原来的顺序。
+        Collections.shuffle(list1);
+
+//        list1.removeAll(list222);
+
+        System.out.println(list1);
+        System.out.println(list1.subList(0,2));
+        System.out.println(list1);
+
         System.out.println(list1.toArray()[3]);
 
         List<Integer> list2 = new ArrayList<>();

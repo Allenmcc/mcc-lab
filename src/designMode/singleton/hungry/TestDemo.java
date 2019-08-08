@@ -31,5 +31,8 @@ public class TestDemo {
             System.out.println(java3y);
         }).start();
 
+
+        //可以看到，打印出的对象不单单只有一个的！
+
     }
 }
