@@ -3,8 +3,12 @@ package fastJson;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.TypeReference;
 import com.google.common.collect.Lists;
 
+import javax.xml.ws.Response;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -74,6 +78,35 @@ public class FastJsonTest {
         JSONArray jsonArray =    JSONArray.parseArray(JSON.toJSONString(users));
         System.out.println(jsonArray);
 //        System.out.println(JSON.toJSONString(users));
+
+        String  testJson = "{\"resultcode\":\"200\",\"reason\":\"成功的返回\",\"result\":{\"area\":\"浙江省温州市平阳县\",\"sex\":\"男\",\"birthday\":\"1989年03月08日\"}}";
+        ResopnseUser response1 =  JSONObject.parseObject(testJson,ResopnseUser.class);
+        System.out.println(response1);
+
+        Response<ResopnseUser> response =  JSONObject.parseObject(testJson,Response.class);
+        System.out.println(response);
+
+
+        final Type  type= new TypeReference<Response<ResopnseUser>>(){}.getType();
+
+        Response<ResopnseUser> response2 =  JSONObject.parseObject(testJson,type);
+
+        System.out.println(response2);
+
+//        List<String> list = new ArrayList<String>();
+//        list.add("1");
+//        list.add("2");
+//
+//        JSONObject o = new JSONObject();
+//        o.put("k",list);
+//
+//        List<String> types = o.getObject("k",List.class);
+//        System.out.println(JSON.toJSONString(types));
+//
+//        List<String> types2 = o.getObject("k",new TypeReference<List<String>>(){});
+//        System.out.println(JSON.toJSONString(types2));
+
+
 
     }
 }
