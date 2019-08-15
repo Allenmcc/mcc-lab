@@ -81,30 +81,44 @@ public class FastJsonTest {
 
         String  testJson = "{\"resultcode\":\"200\",\"reason\":\"成功的返回\",\"result\":{\"area\":\"浙江省温州市平阳县\",\"sex\":\"男\",\"birthday\":\"1989年03月08日\"}}";
         ResopnseUser response1 =  JSONObject.parseObject(testJson,ResopnseUser.class);
+
+        final Type  type= new TypeReference<ResopnseUser>(){}.getType();
+        ResopnseUser response2 =  JSONObject.parseObject(testJson,type);
+        ResopnseUser response3 =  JSONObject.parseObject(testJson, new TypeReference<ResopnseUser>(){});
+        Response response4 =  JSONObject.parseObject(testJson, new TypeReference<Response<ResopnseUser>>(){});
+        Response<ResopnseUser> response5 =  JSONObject.parseObject(testJson,Response.class);
+
         System.out.println(response1);
-
-        Response<ResopnseUser> response =  JSONObject.parseObject(testJson,Response.class);
-        System.out.println(response);
-
-
-        final Type  type= new TypeReference<Response<ResopnseUser>>(){}.getType();
-
-        Response<ResopnseUser> response2 =  JSONObject.parseObject(testJson,type);
-
         System.out.println(response2);
+        System.out.println(response3);
+        System.out.println(response4);
+        System.out.println(response5);
 
-//        List<String> list = new ArrayList<String>();
-//        list.add("1");
-//        list.add("2");
+        List<String> list = new ArrayList<String>();
+        list.add("1");
+        list.add("2");
+
+        JSONObject o = new JSONObject();
+        o.put("k",list);
+
+        List<String> types = o.getObject("k",List.class);
+        System.out.println(JSON.toJSONString(types));
+
+        List<String> types2 = o.getObject("k",new TypeReference<List<String>>(){});
+        System.out.println(JSON.toJSONString(types2));
+
+//        List<Integer> list = new ArrayList<>();
+//        list.add(1);
+//        list.add(9);
+//        list.add(4);
+//        list.add(8);
+//        JSONObject jsonObj = new JSONObject();
+//        jsonObj.put("a", list);
+//        System.out.println(jsonObj);
 //
-//        JSONObject o = new JSONObject();
-//        o.put("k",list);
+//        List<String> list2 = jsonObj.getObject("a", new TypeReference<List<Integer>>(){});
 //
-//        List<String> types = o.getObject("k",List.class);
-//        System.out.println(JSON.toJSONString(types));
-//
-//        List<String> types2 = o.getObject("k",new TypeReference<List<String>>(){});
-//        System.out.println(JSON.toJSONString(types2));
+//        System.out.println(list2);
 
 
 
