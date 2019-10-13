@@ -11,6 +11,9 @@ import java.util.stream.Collectors;
 public class OptionalTest {
 
     /**
+     *
+     * http://www.ibloger.net/article/3209.html
+     *
      * Optional容器类（JDK1.8）
      * 用处：在开发中想把上一个对象的返回值最为下一个对象的参数，但不确定上一个对象的返回值是否为空的情况下，可以把
      * 上一个对象的返回值创建一个Optional对象
@@ -53,6 +56,11 @@ public class OptionalTest {
      * <p>
      * filter：
      * 如果有值并且满足断言条件返回包含该值的Optional，否则返回空Optional。
+     *
+     * findFirst和findAny，通过名字，就可以看到，对这个集合的流，做一系列的中间操作后，可以调用findFirst，返回集合的第一个对象，
+     * findAny返回这个集合中，取到的任何一个对象；通过这样的描述，我们也可以知道，在串行的流中，findAny和findFirst返回的，都是第一个对象；
+     * 而在并行的流中，findAny返回的是最快处理完的那个线程的数据，所以说，在并行操作中，对数据没有顺序上的要求，那么findAny的效率会比findFirst要快的
+     *
      */
 
 
@@ -74,6 +82,7 @@ public class OptionalTest {
 
         //orElse
         System.out.println(optional3.orElse("无值"));
+        System.out.println(optional3.orElse(createNewUser()));
 
         //orElseGet
         System.out.println(optional3.orElseGet(() -> "default"));
@@ -100,15 +109,15 @@ public class OptionalTest {
         List<Student> students = new ArrayList<Student>() {
             {
                 add(new Student(20160001L, "孔明", 20, 1, "土木工程", "武汉大学"));
-                add(new Student(20160002L, "伯约", 21, 2, "信息安全", "武汉大学"));
-                add(new Student(20160003L, "玄德", 22, 3, "经济管理", "武汉大学"));
+                add(new Student(20160002L, "伯约", 20, 2, "信息安全", "武汉大学"));
+                add(new Student(20160003L, "玄德", 20, 3, "经济管理", "武汉大学"));
                 add(new Student(20160004L, "云长", 21, 2, "信息安全", "武汉大学"));
                 add(new Student(20161001L, "翼德", 21, 2, "机械与自动化", "华中科技大学"));
                 add(new Student(20161002L, "元直", 23, 4, "土木工程", "华中科技大学"));
                 add(new Student(20161003L, "奉孝", 23, 4, "计算机科学", "华中科技大学"));
                 add(new Student(20162001L, "仲谋", 22, 3, "土木工程", "浙江大学"));
                 add(new Student(20162002L, "鲁肃", 23, 4, "计算机科学", "浙江大学"));
-                add(new Student(20163001L, "丁奉", 24, 5, "土木工程", "南京大学"));
+                add(new Student(20163001L, "丁奉", 20, 5, "土木工程", "南京大学"));
             }
 
         };
@@ -119,6 +128,10 @@ public class OptionalTest {
         if(optional.isPresent()){
             System.out.println(optional1.get().getName());
         }
+    }
+
+    private static String createNewUser() {
+        return "hello";
     }
 
 }

@@ -2,6 +2,7 @@ package stringTest;
 
 import org.apache.commons.lang.StringUtils;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -11,9 +12,12 @@ public class StringTest {
     public static void main(String[] args) {
 
         double aa =0;
-        if(aa == 0)
+        double bc =0;
+        if(aa == 1)
         {
             System.out.println(11);
+        }else if( bc == 2){
+            System.out.println(2);
         }
 
 
@@ -36,10 +40,15 @@ public class StringTest {
 
         String ip ="1.2.3.4,2.3.4.1";
         String ip2 ="";
+
+        //string -> array
         String []ips =  ip.split(",");
         String []ips2 =  ip2.split(",");
         System.out.println(ips[0]);
         System.out.println(ips2[0]);
+
+        //array->list
+        System.out.println("array->list:"+ Arrays.asList(ips));
 
 //        String test = ips[0];
 //        System.out.println(test);

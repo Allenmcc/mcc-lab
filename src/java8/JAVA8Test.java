@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import listTest.*;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -80,6 +81,9 @@ public class JAVA8Test {
         List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
         List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
 
+        //自然排序
+        List<String> sorted = strings.stream().sorted().collect(Collectors.toList());
+
 
         List<Person> list = new ArrayList<Person>();
         Person a = new Person();
@@ -88,8 +92,13 @@ public class JAVA8Test {
         Person b = new Person();
         b.id = 2;
         b.age = 20;
+
+        Person c = new Person();
+        c.id = 2;
+        c.age = 30;
         list.add(a);
         list.add(b);
+        list.add(c);
 
 
         //过滤
@@ -103,6 +112,24 @@ public class JAVA8Test {
         list.stream().forEach(p -> System.out.println(p.getAge() + " " + p.getId()));
 
         System.out.println(list.size());
+
+        //sorted
+       List<Person> sortedPersons =  list.stream().sorted(Comparator.comparing(Person::getAge).reversed()).collect(Collectors.toList());
+       //reversed() 只能Person::getAge() 形式
+       List<Person> sortedPersons2 =  list.stream().sorted(Comparator.comparing(p->p.getAge())).collect(Collectors.toList());
+
+
+
+       //Collectors.toMap  (aa,bb)->bb  重复key 保存后面
+        Map<Integer,Integer> listToMap = list.stream().collect(Collectors.toMap(Person::getId,Person::getAge,(aa,bb)->aa));
+        Map<String,Integer> listToMapStr = list.stream().collect(Collectors.toMap(p->p.getId()+p.getAge()+"",Person::getAge));
+
+        //value是对象 Function.identity()
+        Map<Integer,Person> listToMap2 = list.stream().collect(Collectors.toMap(Person::getId,Function.identity(),(aa,bb)->bb));
+        //map 转对应类型 ConcurrentHashMap::new
+        Map<Integer,Person> listToTreeMap = list.stream().collect(Collectors.toMap(Person::getId,Function.identity(),(aa,bb)->bb, TreeMap::new));
+
+
 
 
         List<Fruit> fruitList = Lists.newArrayList(new Fruit("apple", 6.0),
