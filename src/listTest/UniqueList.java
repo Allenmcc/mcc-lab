@@ -1,8 +1,6 @@
 package listTest;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by danny on 16/1/7.
@@ -12,6 +10,22 @@ import java.util.List;
 public class UniqueList {
 
     public  static void main(String arg[]) {
+
+
+        List<Integer> errors= Arrays.asList(1,2,3,4,5);
+        errors.forEach(p->{
+            try {
+                if(p.equals(2)){
+                    int aa = 3/0;
+                }
+            }catch (Exception e){
+//                throw  new RuntimeException();
+                System.out.println("error");
+            }
+
+            System.out.println(p);
+        });
+
         List<Person> list = new ArrayList<Person>();
         Person a = new Person();
         a.id = 1;
@@ -19,6 +33,23 @@ public class UniqueList {
         Person b = new Person();
         b.id = 1;
         b.age = 10;
+
+        list.add(a);
+        list.add(b);
+
+        Collections.sort(list, new Comparator<Person>() {
+            @Override
+            public int compare(Person o1, Person o2) {
+                return 1;
+            }
+        });
+
+        Collections.sort(list, (o1, o2) ->
+              o1.getAge().compareTo(o2.getAge())
+        );
+//        list.forEach(person -> System.out.println(person.id));
+        list.stream().forEach(person -> System.out.println(person.getId()));
+
 //        listTest.Person c = new listTest.Person();
 //        c.id = 2;
 //        c.age = 10;

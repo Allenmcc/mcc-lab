@@ -12,13 +12,27 @@ import java.math.RoundingMode;
 public class DoubleTest {
 
     public static void main(String[] args) {
+
+
+        double a0=0.00d;
+        Double aaa0 = 0.0;
+        System.out.println(aaa0.equals(0.000d));
+        System.out.println(a0);
         double a=0.03;
         double b=0.02;
         double c=a-b;
         System.out.println(c);
 
         BigDecimal aa = new BigDecimal("0.03");
+        BigDecimal aaaa = new BigDecimal("0.03");
+        BigDecimal aaaaa = new BigDecimal("0.000000");
         BigDecimal bb = new BigDecimal("0.02");
+
+        System.out.println(aaaaa.compareTo(new BigDecimal("0.00")));
+        System.out.println(aaaaa.compareTo(BigDecimal.ZERO));
+
+        System.out.println(aa.compareTo(aaaa));
+
         System.out.println(aa.subtract(bb));
 
 
@@ -42,6 +56,28 @@ public class DoubleTest {
         System.out.println(d1); //输出5.23
         System.out.println(dd1); //输出5.22
         System.out.println(d2); //输出5.23
+
+        System.out.println(2100000* 1.2d);
+        System.out.println(14.40* 1.2d);
+        System.out.println(0.02* 1.2d);
+        System.out.println(28560000* 1.2d);
+
+        BigDecimal a1 = new BigDecimal(28560000);
+        BigDecimal aa1 = new BigDecimal(1.2);
+        System.out.println(a1.multiply(aa1).doubleValue());
+
+        Double e = 0d;
+        System.out.println(e.equals(0d));
+
+        BigDecimal add1 = new BigDecimal("0.00").setScale(2,RoundingMode.HALF_UP);;
+
+        System.out.println("add :"+ add1.add(d2));
+
+        BigDecimal now = new BigDecimal(220.00);
+        BigDecimal before = new BigDecimal(910.00);
+        BigDecimal re = now.subtract(before).divide(before,3, BigDecimal.ROUND_HALF_UP);
+
+        System.out.println(re);
 
     }
 

@@ -13,8 +13,9 @@ public class ListTest {
 
     public static void main(String[] args) {
 //
-        List<Integer> list1 = new ArrayList<>();
-        List<Integer> list222 = new ArrayList<Integer>(){{add(1);}};
+        List<Integer> list1 = new LinkedList<>();
+        List<Integer> list222 = new ArrayList<Integer>(){};
+//        List<Integer> list222 = new ArrayList<Integer>(){{add(1);add(22);}};
         list1.add(1);
         list1.add(2);
         list1.add(3);
@@ -22,6 +23,25 @@ public class ListTest {
         list1.add(5);
         list1.add(6);
         list1.add(7);
+
+        list1.addAll(list222);
+
+        final int[] tmp = new int[10];
+//        final int[] tmp = {0,1};
+
+        list1.forEach(p->{
+
+            tmp[0] += p;
+            tmp[1] += p;
+
+        });
+        System.out.println(tmp[0]);
+        System.out.println(tmp[1]);
+
+        list1.forEach(System.out::println);
+
+        list1.add(2,22);
+        list1.add(1,22);
 
         System.out.println(list1);
 

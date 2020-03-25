@@ -2,6 +2,7 @@ package java8;
 
 import com.google.common.collect.Lists;
 import listTest.*;
+import org.junit.Test;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -45,7 +46,10 @@ public class JAVA8Test {
 
         System.out.println(outputStream.collect(Collectors.toList()));
 
-//       System.out.println(outputStream.collect(Collectors.toSet()));
+//        System.out.println(outputStream.collect(Collectors.toSet()));
+        List<Integer> result = null ;
+        System.out.println(result.stream().collect(Collectors.toList()));
+        System.out.println(result.stream().collect(Collectors.toSet()));
 
 //       System.out.println(outputStream.collect(Collectors.joining()).toString());
 
@@ -103,11 +107,15 @@ public class JAVA8Test {
 
         //过滤
         List<Person> l2 = list.stream().filter(p -> p.id == 1).collect(Collectors.toList());
+        List<Integer> ll2 = list.stream().filter(p -> p.id == 2).map(p->p.age).collect(Collectors.toList());
 
 
         //取某些字段,对某些元素操作
         List<Integer> l3 = list.stream().map(p -> p.age).collect(Collectors.toList());
         List<Integer> l4 = list.stream().map(Person::getAge).collect(Collectors.toList());
+
+        Optional<Integer> optional = list.stream().map(p->p.getAge()).findFirst();
+        optional.ifPresent(e->System.out.println("optional.ifPresent:"+e));
 
         list.stream().forEach(p -> System.out.println(p.getAge() + " " + p.getId()));
 
@@ -119,10 +127,18 @@ public class JAVA8Test {
        List<Person> sortedPersons2 =  list.stream().sorted(Comparator.comparing(p->p.getAge())).collect(Collectors.toList());
 
 
+       //没有去重处理
+//        Map<Integer,Person> listToMap0 = list.stream().collect(Collectors.toMap(Person::getId,cc -> cc));
+//        Map<Integer,Person> listToMap00 = list.stream().collect(Collectors.toMap(Person::getId,Function.identity()));
 
-       //Collectors.toMap  (aa,bb)->bb  重复key 保存后面
+
+        //Collectors.toMap(key,value,rule)  rule (aa,bb)->bb  重复key 保存后面
         Map<Integer,Integer> listToMap = list.stream().collect(Collectors.toMap(Person::getId,Person::getAge,(aa,bb)->aa));
         Map<String,Integer> listToMapStr = list.stream().collect(Collectors.toMap(p->p.getId()+p.getAge()+"",Person::getAge));
+        Map<String,Person> listToMapStr2 = list.stream().collect(Collectors.toMap(p->p.getId()+p.getAge()+"",p->p,(aa,bb)->aa));
+
+
+        Integer abc = listToMapStr.get("1212");
 
         //value是对象 Function.identity()
         Map<Integer,Person> listToMap2 = list.stream().collect(Collectors.toMap(Person::getId,Function.identity(),(aa,bb)->bb));
@@ -131,30 +147,12 @@ public class JAVA8Test {
 
 
 
-
-        List<Fruit> fruitList = Lists.newArrayList(new Fruit("apple", 6.0),
-                new Fruit("apple", 6.0),
-                new Fruit("banana", 7.0), new Fruit("banana", 7.0),
-                new Fruit("banana", 7.0), new Fruit("grape",8.0));
-
-        Map<String, Long> map = fruitList.stream().
-                collect(Collectors.groupingBy(Fruit::getName,Collectors.counting()));
-        System.out.println(map);
-
-        Map<String, Long> map2 = fruitList.stream().map(Fruit::getName).
-                collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        System.out.println(map2);
-
-//
-//        Map<String, Set<Long>> mapSet = fruitList.stream().
-//                collect(Collectors.groupingBy(Fruit::getName,Collectors.mapping(Fruit::getPrice,Collectors.toSet())));
-//        System.out.println(mapSet);
-
-
-
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
         numbers.parallelStream()
                 .forEach(p->System.out.println(p));
+
+        numbers.parallelStream()
+                .map(p->p+1).map(p-> p*2).forEach(p-> System.out.println(p));
 
         List<String> ss = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
     // 获取空字符串的数量
@@ -164,6 +162,24 @@ public class JAVA8Test {
 
 
 
+    }
+
+    @Test
+    public void testParalleStream(){
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+
+//        中间操作之间也是没有顺序
+        numbers.parallelStream()
+                .map(p -> {
+                    System.out.println("a:" + Thread.currentThread()+ p);
+                    return p + 1;
+                })
+                .map(p -> {
+                    System.out.println("b:" + Thread.currentThread()+ p);
+                    return p * 10;
+                })
+                .forEach(p -> System.out.println("c:" + Thread.currentThread() + p));
     }
 
 }

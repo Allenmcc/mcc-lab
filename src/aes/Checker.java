@@ -15,5 +15,9 @@ public class Checker {
         System.out.println("原来的密码 : " + password);
         System.out.println("加密后的密码 : " + passwordEnc);
         System.out.println("解密后的原密码 : " + passwordDec);
+
+        String key = "28hwLJGGTtAuhyywldoUHo";
+
+        aes.decrypt("982922616806993921");
     }
 }

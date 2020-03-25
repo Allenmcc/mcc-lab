@@ -2,9 +2,7 @@ package maptest;
 
 
 
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by chunchen.meng on 2019/6/11.
@@ -25,6 +23,19 @@ public class MapTest {
 //        int k2 = 2;
 //        System.out.println(big.get(k2));
 
+        //initialCapacity = (需要存储的元素个数 / 负载因子) + 1公式计算后设置
+        //反例：HashMap需要放置1024个元素，由于没有设置容量初始大小，随着元素不断增加，容量7次被迫扩大，resize需要重建hash表，严重影响性能。
+        Map<String, Object> map = new HashMap<>(4);
+        map.put("1","a");
+        map.put("2","b");
+        map.put("3","c");
+        map.put("4","d");
+        map.put("5","e");
+        map.put("6","e");
+        map.put("7","e");
+        map.put("8","e");
+
+        System.out.println(map);
 
 
 

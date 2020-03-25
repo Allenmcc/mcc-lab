@@ -40,6 +40,7 @@ public class HeapSort2 {
         int right = 2 * i + 2;
         int largest = i;
 
+        //3个节点找最大的
         if (left < len && arr[left] > arr[largest]) {
             largest = left;
         }

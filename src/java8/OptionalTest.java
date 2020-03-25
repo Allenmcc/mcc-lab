@@ -1,5 +1,7 @@
 package java8;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -134,4 +136,108 @@ public class OptionalTest {
         return "hello";
     }
 
+
+    @Test
+    public void testOfNullable(){
+
+        //创建空Optional 对象
+        Optional<Employee> op =  Optional.empty();
+        System.out.println(op);
+
+        //npe
+//        Optional<Employee> op1 =  Optional.of(null);
+        Optional<Employee> op1 =  Optional.of(new Employee(1,"user",20,100.0));
+        System.out.println(op1);
+
+
+        // ofNullable -> empty() : of(value);
+        Optional<Employee> op2 =  Optional.ofNullable(null);
+        Employee employee = op2.orElse(new Employee(1,"user",20,100.0));
+        System.out.println(employee);
+
+        Employee employee1 = op2.orElseGet(()->new Employee());
+        System.out.println(employee1);
+
+        //public<U> Optional<U> map(Function<? super T, ? extends U> mapper)
+        Optional<String> optional= op1.map(e->e.getName());
+        System.out.println(optional.get());
+
+        //public<U> Optional<U> flatMap(Function<? super T, Optional<U>> mapper)
+        //与map 类似，要求返回值必须是Optional
+       Optional<String> optional1 =  op1.flatMap(e->Optional.of(e.getName()));
+       System.out.println(optional1.get());
+
+    }
+
+
+
+    public class Employee {
+
+        private int id;
+        private String name;
+        private int age;
+        private Double salary;
+
+
+        public Employee() {
+        }
+
+        public Employee(int id) {
+            this.id = id;
+        }
+
+        public Employee(int id, int age) {
+            this.id = id;
+            this.age = age;
+        }
+
+        public Employee(int id, String name, int age, Double salary) {
+            this.id = id;
+            this.name = name;
+            this.age = age;
+            this.salary = salary;
+        }
+
+        @Override
+        public String toString() {
+            return "Employee{" +
+                    "id=" + id +
+                    ", name='" + name + '\'' +
+                    ", age=" + age +
+                    ", salary=" + salary +
+                    '}';
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
+
+        public Double getSalary() {
+            return salary;
+        }
+
+        public void setSalary(Double salary) {
+            this.salary = salary;
+        }
+    }
 }

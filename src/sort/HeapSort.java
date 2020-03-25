@@ -4,7 +4,7 @@ package sort;
  * Created by danny on 2016/10/29.
  * 堆排序 (大根堆，根节点大)
  * https://chihminh.github.io/2016/08/08/heap-sort/
- * https://www.cnblogs.com/chengxiao/p/6129630.html
+ * https://www.cnblogs.com/chengxiao/p/6129630.html (图解)
  * https://www.runoob.com/w3cnote/heap-sort.html
  */
 public class HeapSort {

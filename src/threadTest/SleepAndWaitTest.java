@@ -26,7 +26,7 @@ public class SleepAndWaitTest {
                 try {
                     //调用wait()方法，线程会放弃对象锁，进入等待此对象的等待锁定池
 //                    SleepAndWaitTest.class.wait();
-                    //带参数的wait(1000),时间一到就进入锁池状态，不需要notify
+//                    带参数的wait(1000),时间一到就进入锁池状态，不需要notify
                     SleepAndWaitTest.class.wait(1000);
                 } catch (Exception e) {
                     e.printStackTrace();

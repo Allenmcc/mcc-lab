@@ -56,5 +56,14 @@ public class IntTest {
          java对于-128到127之间的数，会进行缓存，Integer i = 127时，会将127进行缓存，下次再写Integer j = 127时，就会直接从缓存中取，就不会new了
          */
 
+        Integer integer;
+        int ii;
+        System.out.println(getInteger());
+    }
+
+    private static int getInteger(){
+//        Integer integer = new Integer();
+        int i = 2;
+        return i;
     }
 }

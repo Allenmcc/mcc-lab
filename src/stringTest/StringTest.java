@@ -1,15 +1,44 @@
 package stringTest;
 
 import org.apache.commons.lang.StringUtils;
+import org.junit.Test;
 
+import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 
 /**
  * Created by danny on 2017/1/18.
  */
 public class StringTest {
+    public static final   String SMS_TEMPLATE = "%s,%s钟内异常:%s,类型%s";
+
     public static void main(String[] args) {
+
+//        String test = "121212";
+//        System.out.println(test.substring(0,20));
+
+//        String  ser = "E00001331_LEAVED";
+        String  ser = "E00001331S";
+        System.out.println(StringUtils.substringBefore(ser,"_"));
+
+        String s = "";
+
+      String[]  sp =  s.split(",");
+//      sp[]
+
+       String ss33 =  String.format(SMS_TEMPLATE,"aa",2,"npe","sd");
+
+        String testaa = ",haha";
+        String[] tolist = testaa.split(",");
+        String length = "1哈";
+
+        if(length.length()>=3){
+            System.out.println(length.substring(0,3));
+        }
+
+        System.out.println(length.length()>3? length.substring(0,3):length);
 
         double aa =0;
         double bc =0;
@@ -127,6 +156,8 @@ public class StringTest {
 
 
 
+
+
     }
 
     public static boolean isValidPic(String url) {
@@ -138,6 +169,35 @@ public class StringTest {
         return url.contains("");
     }
 
+    @Test
+    public void splitTest(){
+        String s = "[CAT异常告警] [项目: business-gateway-external] [CAT异常告警] [项目: business-gateway-external] : [ 异常名称: java.lang.NullPointerException 异常数量：6.0 ][时间: 2020-02-24 16:38]     [告警间隔时间]2分钟";
+
+       String s1 =  StringUtils.substringBeforeLast(s, "[CAT");
+       String s2 =  StringUtils.substringAfterLast(s, "[CAT异常告警] ");
+       String s3 =  s2.replaceAll(" ","").replaceAll("\\[","").replaceAll("\\]","").replaceAll(":","").replace("：","").replaceAll("CAT","").replaceAll("项目","").replaceAll("名称","").replaceAll("异常","").replaceAll("时间","").replaceAll("告警","");
+
+      String s33 = s3.substring(0,65);
+
+      String s5  = StringUtils.substringAfterLast(s3,"CAT异常告警");
+
+      String name =  StringUtils.substringBefore(StringUtils.substringAfter(s ,"[项目: "),"]");
+      String cnt =  StringUtils.substringBefore(StringUtils.substringAfter(s ,"异常数量："),".0");
+      String type =  StringUtils.substringBefore(StringUtils.substringAfter(s ,"[ 异常名称: ")," 异常数量");
+      String gapTime = StringUtils.substringAfter(s ,"[告警间隔时间]");
+
+//     String s4 =  strHandler(s, p->p.substring(2));
+
+        System.out.println(s.split(" "));
+
+       System.out.println(s5);
+
+
+    }
+
+    public static String strHandler(String str, Function<String, String> fun) {
+        return fun.apply(str);
+    }
 
 
 }
