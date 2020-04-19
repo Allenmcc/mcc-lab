@@ -1,5 +1,6 @@
 package designMode.atguigu.flyweight;
 
+//外部状态
 public class User {
 	
 	private String name;

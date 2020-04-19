@@ -9,6 +9,8 @@ public class SingletonTest01 {
 		System.out.println(instance == instance2); // true
 		System.out.println("instance.hashCode=" + instance.hashCode());
 		System.out.println("instance2.hashCode=" + instance2.hashCode());
+		System.out.println(instance.use());
+		System.out.println(instance2.use());
 	}
 
 }
@@ -27,6 +29,11 @@ class Singleton {
 	//3.提供一个公有的静态方法，返回实例对象
 	public static Singleton getInstance() {
 		return instance;
+	}
+
+	//使用单例
+	public long use() {
+		return System.currentTimeMillis();
 	}
 	
 }

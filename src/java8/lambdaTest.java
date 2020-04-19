@@ -15,6 +15,8 @@ import java.util.function.*;
  * https://www.toutiao.com/i6770858450273436164/?tt_from=weixin&utm_campaign=client_share&wxshare_count=1&timestamp=1578316045&app=news_article&utm_source=weixin&utm_medium=toutiao_android&req_id=202001062107250100140470770B4C6D28&group_id=6770858450273436164
  * 左侧lambda 表达式的参数列表
  * 右侧lambda 表达式中所需要执行的功能，即lambda体
+ * 函数式接口:任何接口，如果只包含唯一一个抽象方法，那么它就是一个函数式接口
+ * 对于函数式接口，我们可以通过lambda表达式来创建该接口的对象（接口里面的方法，都是抽象的abstract，隐式申明，可以不用写）
  */
 public class lambdaTest {
     public static void main(String[] args) {

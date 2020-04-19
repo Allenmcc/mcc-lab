@@ -4,12 +4,12 @@ public class Client {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//����Ŀ�����
+		//创建目标对象
 		TeacherDao target = new TeacherDao();
-		//��ȡ��������󣬲��ҽ�Ŀ����󴫵ݸ��������
+		//获取到代理对象，并且将目标对象传递给代理对象
 		TeacherDao proxyInstance = (TeacherDao)new ProxyFactory(target).getProxyInstance();
 
-		//ִ�д������ķ���������intecept �������Ӷ�ʵ�� ��Ŀ�����ĵ���
+		//ִ执行代理对象的方法，触发intecept方法，从而实现对目标对象的调用
 		String res = proxyInstance.teach();
 		System.out.println("res=" + res);
 	}

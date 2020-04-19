@@ -1,5 +1,6 @@
 package designMode.atguigu.mediator.smarthouse;
 
+//窗帘
 public class Curtains extends Colleague {
 
 	public Curtains(Mediator mediator, String name) {

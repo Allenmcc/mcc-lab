@@ -1,11 +1,12 @@
 package designMode.atguigu.template.improve;
 
+//纯豆浆
 public class PureSoyaMilk extends SoyaMilk{
 
 	@Override
 	void addCondiments() {
 		// TODO Auto-generated method stub
-		//��ʵ��
+		//空实现
 	}
 	
 	@Override

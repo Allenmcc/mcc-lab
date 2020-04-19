@@ -1,17 +1,17 @@
 package designMode.atguigu.observer;
 
 /**
- * ��ʾ��ǰ�����������������������վ�Լ�����վ��
+ * 显示当前天气情况（可以理解成是气象自己的网站）
  * @author Administrator
  *
  */
 public class CurrentConditions {
-	// �¶ȣ���ѹ��ʪ��
+	//温度，气压，湿度
 	private float temperature;
 	private float pressure;
 	private float humidity;
 
-	//���� ������������� WeatherData �����ã���ʹ������ģʽ
+	//更新天气情况，是由WeatherData来调用，我使用推送模式
 	public void update(float temperature, float pressure, float humidity) {
 		this.temperature = temperature;
 		this.pressure = pressure;
@@ -19,7 +19,7 @@ public class CurrentConditions {
 		display();
 	}
 
-	//��ʾ
+	//显示
 	public void display() {
 		System.out.println("***Today mTemperature: " + temperature + "***");
 		System.out.println("***Today mPressure: " + pressure + "***");

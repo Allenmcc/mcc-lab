@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by chunchen.meng on 2019/3/26.
  */
-public class JVMTest {
+public class    JVMTest {
 
     public  static void main(String[] args){
         List list = new ArrayList();

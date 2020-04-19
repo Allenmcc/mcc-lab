@@ -6,15 +6,15 @@ import java.util.List;
 public class InfoColleageIterator implements Iterator {
 
 	
-	List<Department> departmentList; // ��Ϣ����ѧԺ����List��ʽ���ϵ
-	int index = -1;//����
+	List<Department> departmentList; // 信息工程需要是以List方式存放
+	int index = -1;//索引
 	
 
 	public InfoColleageIterator(List<Department> departmentList) {
 		this.departmentList = departmentList;
 	}
 
-	//�ж�list�л���û����һ��Ԫ��
+	//判断lsit中还有没有下一个元素
 	@Override
 	public boolean hasNext() {
 		// TODO Auto-generated method stub
@@ -32,7 +32,7 @@ public class InfoColleageIterator implements Iterator {
 		return departmentList.get(index);
 	}
 	
-	//��ʵ��remove
+	//空实现 remove
 	public void remove() {
 		
 	}

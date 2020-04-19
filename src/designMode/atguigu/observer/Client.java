@@ -2,16 +2,16 @@ package designMode.atguigu.observer;
 
 public class Client {
 	public static void main(String[] args) {
-		//�������뷽 currentConditions
+		//创建接入方 currentConditions
 		CurrentConditions currentConditions = new CurrentConditions();
-		//���� WeatherData ���� ���뷽 currentConditions ���ݵ� WeatherData��
+		//创建 WeatherData 并将接入方 currentConditions 传递到 WeatherData中
 		WeatherData weatherData = new WeatherData(currentConditions);
 		
-		//�����������
+		//更新天气情况
 		weatherData.setData(30, 150, 40);
 		
-		//��������仯
-		System.out.println("============��������仯=============");
+		//天气情况变化
+		System.out.println("============天气情况变化=============");
 		weatherData.setData(40, 160, 20);
 		
 

@@ -3,9 +3,8 @@ package designMode.atguigu.interpreter;
 import java.util.HashMap;
 
 /**
- * ����������Ž����� ���ÿ��������ţ���ֻ���Լ��������������й�ϵ��
- * ���������������п���Ҳ��һ�������Ľ�������ۺ������ͣ�����Expression���ʵ����
- * 
+ * 抽象运算符号解释器这里，每个运算符号，都只和自己左右两个数字有关系，
+ * 但左右两个数字可能也是一个解析的结果，无论何种类型，都是Expression类的实现类
  * @author Administrator
  *
  */
@@ -19,7 +18,7 @@ public class SymbolExpression extends Expression {
 		this.right = right;
 	}
 
-	//��Ϊ SymbolExpression ������������ʵ�֣���� interpreter ��һ��Ĭ��ʵ��
+	//因为SymbolExpression 是让其子类来实现，因此interpreter 是一个默认实现
 	@Override
 	public int interpreter(HashMap<String, Integer> var) {
 		// TODO Auto-generated method stub

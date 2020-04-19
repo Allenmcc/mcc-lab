@@ -2,12 +2,12 @@ package designMode.atguigu.observer.improve;
 
 public class BaiduSite implements Observer {
 
-	// �¶ȣ���ѹ��ʪ��
+	//温度，气压，湿度
 	private float temperature;
 	private float pressure;
 	private float humidity;
 
-	// ���� ������������� WeatherData �����ã���ʹ������ģʽ
+	//更新天气情况，是由WeatherData来调用，我使用推送模式
 	public void update(float temperature, float pressure, float humidity) {
 		this.temperature = temperature;
 		this.pressure = pressure;
@@ -15,12 +15,12 @@ public class BaiduSite implements Observer {
 		display();
 	}
 
-	// ��ʾ
+	//显示
 	public void display() {
-		System.out.println("===�ٶ���վ====");
-		System.out.println("***�ٶ���վ ���� : " + temperature + "***");
-		System.out.println("***�ٶ���վ ��ѹ: " + pressure + "***");
-		System.out.println("***�ٶ���վ ʪ��: " + humidity + "***");
+		System.out.println("======百度网站=======");
+		System.out.println("***百度网站气温: " + temperature + "***");
+		System.out.println("***百度网站气压: " + pressure + "***");
+		System.out.println("***百度网站湿度: " + humidity + "***");
 	}
 
 }

@@ -3,10 +3,10 @@ package designMode.atguigu.observer.improve;
 import java.util.ArrayList;
 
 /**
- * ���Ǻ���
- * 1. �������µ����������Ϣ 
- * 2. ���� �۲��߼��ϣ�ʹ��ArrayList����
- * 3. �������и���ʱ���������ĵ���   ArrayList, ֪ͨ���еģ����뷽���Ϳ������µ���Ϣ
+ * 类是核心
+ * 1. 包含最新的天气情况信息
+ * 2. 含有观察者集合，使用ArrayList管理
+ * 3. 当数据更新时，就主动调用ArrayList，通知所有的（接入方） 就看到最新的信息
  * @author Administrator
  *
  */
@@ -14,11 +14,10 @@ public class WeatherData implements Subject {
 	private float temperatrue;
 	private float pressure;
 	private float humidity;
-	//�۲��߼���
+	//观察者集合
 	private ArrayList<Observer> observers;
 	
-	//�����µĵ�����
-
+	//加入新的第三方
 	public WeatherData() {
 		observers = new ArrayList<Observer>();
 	}
@@ -36,28 +35,28 @@ public class WeatherData implements Subject {
 	}
 
 	public void dataChange() {
-		//���� ���뷽�� update
-		
+		//调用接入方的update
+
 		notifyObservers();
 	}
 
-	//�������и���ʱ���͵��� setData
+	//当数据有更新时候，就调用setData
 	public void setData(float temperature, float pressure, float humidity) {
 		this.temperatrue = temperature;
 		this.pressure = pressure;
 		this.humidity = humidity;
-		//����dataChange�� �����µ���Ϣ ���͸� ���뷽 currentConditions
+		//调用dataChange将最新的信息推送给接入方 currentConditions
 		dataChange();
 	}
 
-	//ע��һ���۲���
+	//注册一个观察者
 	@Override
 	public void registerObserver(Observer o) {
 		// TODO Auto-generated method stub
 		observers.add(o);
 	}
 
-	//�Ƴ�һ���۲���
+	//移除一个观察者
 	@Override
 	public void removeObserver(Observer o) {
 		// TODO Auto-generated method stub
@@ -66,7 +65,7 @@ public class WeatherData implements Subject {
 		}
 	}
 
-	//�������еĹ۲��ߣ���֪ͨ
+	//遍历所有的观察者，并通知
 	@Override
 	public void notifyObservers() {
 		// TODO Auto-generated method stub

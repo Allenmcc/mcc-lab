@@ -1,6 +1,6 @@
 package designMode.atguigu.observer.improve;
 
-//�۲��߽ӿڣ��й۲�����ʵ��
+//观察者接口
 public interface Observer {
 
 	public void update(float temperature, float pressure, float humidity);

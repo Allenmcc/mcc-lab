@@ -4,7 +4,7 @@ public class Man extends Person {
 
 	@Override
 	public void accept(Action action) {
-		// TODO Auto-generated method stub
+		// 本身测传递过去
 		action.getManResult(this);
 	}
 

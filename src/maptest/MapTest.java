@@ -10,6 +10,13 @@ import java.util.*;
 public class MapTest {
 
     public static void main(String[] args) {
+
+        Map<String, Object> contentMap = new LinkedHashMap<>();
+        long ufts = System.currentTimeMillis();
+        System.out.println(ufts);
+        contentMap.put("utfs", ufts);
+
+        System.out.println(contentMap.get("utfs"));
 //        Map<Long, Map<Long, String>> big = new HashMap<Long, Map<Long,String>>();
 //        for(long i = 0; i < 10; i++) {
 //            Map<Long, String> small = new HashMap<Long, String>();
@@ -37,6 +44,12 @@ public class MapTest {
 
         System.out.println(map);
 
+        Map<String, Object> mapall = new HashMap<>(4);
+        mapall.put("1","aa");
+        mapall.put("2","bb");
+        mapall.put("3","cc");
+
+          map.putAll(mapall);
 
 
         //key can null

@@ -2,9 +2,9 @@ package designMode.atguigu.mediator.smarthouse;
 
 import java.util.HashMap;
 
-//������н�����
+//具体的中介者类
 public class ConcreteMediator extends Mediator {
-	//���ϣ��������е�ͬ�¶���
+	//集合，放入所有的同事对象
 	private HashMap<String, Colleague> colleagueMap;
 	private HashMap<String, String> interMap;
 
@@ -32,14 +32,14 @@ public class ConcreteMediator extends Mediator {
 
 	}
 
-	//�����н��ߵĺ��ķ���
-	//1. ���ݵõ���Ϣ����ɶ�Ӧ����
-	//2. �н��������������Э�����������ͬ�¶����������
+	//具体中介者的核心方法
+	//1.根据得到消息，完成对应任务
+	//2.中介者在这个方法，协调各个具体的同事对象，完成任务
 	@Override
 	public void GetMessage(int stateChange, String colleagueName) {
 		// TODO Auto-generated method stub
 
-		//�������ӷ�������Ϣ
+		//处理闹钟发出的消息
 		if (colleagueMap.get(colleagueName) instanceof Alarm) {
 			if (stateChange == 0) {
 				((CoffeeMachine) (colleagueMap.get(interMap
@@ -53,10 +53,10 @@ public class ConcreteMediator extends Mediator {
 			((Curtains) (colleagueMap.get(interMap.get("Curtains"))))
 					.UpCurtains();
 
-		} else if (colleagueMap.get(colleagueName) instanceof TV) {//���TV������Ϣ
+		} else if (colleagueMap.get(colleagueName) instanceof TV) {//如果TV发现消息，这里处理
 
 		} else if (colleagueMap.get(colleagueName) instanceof Curtains) {
-			//������Դ�����������Ϣ�����ﴦ��...
+			//如果是以窗帘发出的消息，这里处理
 		}
 
 	}

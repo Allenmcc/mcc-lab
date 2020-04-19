@@ -5,14 +5,14 @@ public class PekingDuck extends Duck {
 	@Override
 	public void display() {
 		// TODO Auto-generated method stub
-		System.out.println("~~����Ѽ~~~");
+		System.out.println("~~北京鸭~~~");
 	}
 	
-	//��Ϊ����Ѽ���ܷ��裬�����Ҫ��дfly
+	//因为北京鸭不能飞行，因此需要重写fly
 	@Override
 	public void fly() {
 		// TODO Auto-generated method stub
-		System.out.println("����Ѽ���ܷ���");
+		System.out.println("北京鸭不能飞翔");
 	}
 
 }

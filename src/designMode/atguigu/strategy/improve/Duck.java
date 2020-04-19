@@ -2,33 +2,34 @@ package designMode.atguigu.strategy.improve;
 
 public abstract class Duck {
 
-	//����, ���Խӿ�
+	//属性，策略接口
 	FlyBehavior flyBehavior;
-	//��������<->���Խӿ�
+	//其他属性<->策略接口
 	QuackBehavior quackBehavior;
 	
 	public Duck() {
 	
 	}
 
-	public abstract void display();//��ʾѼ����Ϣ
+	public abstract void display();//显示鸭子信息
 	
 	public void quack() {
-		System.out.println("Ѽ�Ӹ¸½�~~");
+		System.out.println("鸭子嘎嘎叫");
 	}
 	
 	public void swim() {
-		System.out.println("Ѽ�ӻ���Ӿ~~");
+		System.out.println("鸭子会游泳");
 	}
 	
 	public void fly() {
 		
-		//�Ľ�
+		//改进
 		if(flyBehavior != null) {
 			flyBehavior.fly();
 		}
 	}
 
+	//提供改行为的方法
 	public void setFlyBehavior(FlyBehavior flyBehavior) {
 		this.flyBehavior = flyBehavior;
 	}

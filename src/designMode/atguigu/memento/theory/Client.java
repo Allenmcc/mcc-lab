@@ -11,27 +11,27 @@ public class Client {
 		Originator originator = new Originator();
 		Caretaker caretaker = new Caretaker();
 		
-		originator.setState(" ״̬#1 ������ 100 ");
+		originator.setState("状态#1 攻击力100 ");
 		
-		//�����˵�ǰ��״̬
+		//保存了当前的状态
 		caretaker.add(originator.saveStateMemento());
 		
-		originator.setState(" ״̬#2 ������ 80 ");
+		originator.setState("状态#2 攻击力80 ");
 		
 		caretaker.add(originator.saveStateMemento());
 		
-		originator.setState(" ״̬#3 ������ 50 ");
+		originator.setState("状态#3 攻击力50 ");
 		caretaker.add(originator.saveStateMemento());
 		
 		
 		
-		System.out.println("��ǰ��״̬�� =" + originator.getState());
+		System.out.println("当前的状态 =" + originator.getState());
 		
-		//ϣ���õ�״̬ 1, �� originator �ָ���״̬1
+		//希望得到状态1,将originator恢复到状态1
 		
 		originator.getStateFromMemento(caretaker.get(0));
-		System.out.println("�ָ���״̬1 , ��ǰ��״̬��");
-		System.out.println("��ǰ��״̬�� =" + originator.getState());
+		System.out.println("恢复到状态1，当前的状态是");
+		System.out.println("当前的状态 =" + originator.getState());
 		
 		
 		
