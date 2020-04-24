@@ -79,6 +79,13 @@ public class DoubleTest {
 
         System.out.println(re);
 
+
+        BigDecimal before2 = new BigDecimal("0.00");
+        //Bigdecimal的equals方法不仅仅比较值的大小是否相等，首先比较的是scale（scale是bigdecimal的保留小数点位数，比如 new Bigdecimal("1.001"),scale为3），也就是说，不但值得大小要相等，保留位数也要相等，equals才能返回true。
+        System.out.println(before2.equals(BigDecimal.ZERO));
+        //b.compareTo(BigDecimal.ZERO)==0，可以比较是否等于0，返回true则等于0，返回false，则不等于0
+        System.out.println(before2.compareTo(BigDecimal.ZERO)== 0);
+
     }
 
 }

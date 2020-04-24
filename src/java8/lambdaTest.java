@@ -213,6 +213,10 @@ public class lambdaTest {
     public void test44() {
         BiPredicate<String, String> bp = (x, y) -> x.equals(y);
         BiPredicate<String, String> bp2 = String::equals;
+        BiPredicate<String, String> bp3 = (x,y) ->y.contains(x);
+
+
+        System.out.println(bp3.test("10","20,10"));
 
     }
 

@@ -2,6 +2,7 @@ package pattern;
 
 /**
  * Created by chunchen.meng on 2018/6/9.
+ * 泛型demo
  * https://www.cnblogs.com/coprince/p/8603492.html
  */
 public class GenericFruit {
@@ -36,7 +37,7 @@ public class GenericFruit {
 
     class GenerateTest<T>{
         public void show_1(T t){
-            System.out.println(t.toString());
+            System.out.println("show_1:"+ t.toString());
         }
 
         //在泛型类中声明了一个泛型方法，使用泛型E，这种泛型E可以为任意类型。可以类型与T相同，也可以不同。
