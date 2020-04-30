@@ -2,7 +2,7 @@ package designMode.atguigu.bridge;
 
 public abstract class Phone {
 	
-	//组合品牌
+	//依赖品牌
 	private Brand brand;
 
 	//构造器

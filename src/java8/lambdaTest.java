@@ -46,7 +46,7 @@ public class lambdaTest {
         //函数式接口：R apply(T t); 有入参 ->对入参函数操作 有返回值
         String newStr = strHandler("abc", (str) -> str.toUpperCase());
         System.out.println(newStr);
-        newStr = strHandler(" abc ", (str) -> str.trim());
+        newStr = strHandler(" abc d ", (str) -> str.trim());
         System.out.println(newStr);
 
         consumerTest(" abc ", (str) -> System.out.println("cc"));

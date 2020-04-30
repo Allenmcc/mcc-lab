@@ -1,5 +1,6 @@
 package designMode.atguigu.visitor;
 
+//变化的功能需求,新增一种action
 public class Wait extends Action {
 
 	@Override

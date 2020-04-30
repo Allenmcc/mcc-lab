@@ -1,6 +1,6 @@
 package designMode.atguigu.bridge;
 
-//�ӿ�
+//品牌
 public interface Brand {
 	void open();
 	void close();

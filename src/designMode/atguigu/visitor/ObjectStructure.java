@@ -6,7 +6,7 @@ import java.util.List;
 //数据结构，管理很多人（Man，Woman）
 public class ObjectStructure {
 
-	//维护了一个集合
+	//维护了一个集合,组合关系
 	private List<Person> persons = new LinkedList<>();
 	
 	//添加到list

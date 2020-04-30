@@ -13,6 +13,7 @@ public class Client {
 		
 		//成功
 		Success success = new Success();
+		//第一次分派
 		objectStructure.display(success);
 		
 		System.out.println("===============");
