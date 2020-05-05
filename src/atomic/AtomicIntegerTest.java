@@ -3,20 +3,22 @@ package atomic;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ * JMM
+ * https://blog.csdn.net/mccand1234/article/details/52139319
  * Created by chunchen.meng on 2019/1/16.
  */
 public class AtomicIntegerTest {
 
     private static final int THREADS_CONUT = 20;
-//    public static int count = 0;
-//    public static volatile int count = 0;
-    public static AtomicInteger count = new AtomicInteger(0);
+//    public static int count = 0;   //可能<20000
+    public static volatile int count = 0; //也可能<20000
+//    public static AtomicInteger count = new AtomicInteger(0); //等于20000
 
 
 
     public static void increase() {
-//        count++;
-        count.incrementAndGet();
+        count++;  //不保证原子性，某个线程count++后assign后没有拿到lock，监听总线，将工作内存count失效，丢失本次++
+//        count.incrementAndGet();  //保证原子性
         System.out.println(count);
     }
 
