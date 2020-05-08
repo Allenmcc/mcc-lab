@@ -1,5 +1,6 @@
 package designMode.atguigu.decorator;
 
+//抽象主体
 public abstract class Drink {
 
 	public String des; // 描述
@@ -18,7 +19,7 @@ public abstract class Drink {
 	}
 	
 	//计算费用的抽象方法
-	//子类实现
+	//子类实现(装饰类,缓冲层Coffee)
 	public abstract float cost();
 	
 }

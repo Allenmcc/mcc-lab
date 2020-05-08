@@ -1,13 +1,15 @@
 package designMode.atguigu.decorator;
 
+//装饰类
 public class Decorator extends Drink {
-	private Drink obj;  //被装饰者
+	private Drink obj;  //主体,被装饰者  继承+聚合
 	
 	public Decorator(Drink obj) { //构造器 组合关系
 		// TODO Auto-generated constructor stub
 		this.obj = obj;
 	}
-	
+
+	//费用:包装产品价格+主题产品费用
 	@Override
 	public float cost() {
 		// TODO Auto-generated method stub

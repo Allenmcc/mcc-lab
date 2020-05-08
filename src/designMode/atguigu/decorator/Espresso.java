@@ -1,6 +1,6 @@
 package designMode.atguigu.decorator;
 
-
+//具体产品
 public class Espresso extends Coffee {
 	
 	public Espresso() {

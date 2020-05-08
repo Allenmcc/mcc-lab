@@ -48,8 +48,8 @@ public class JAVA8Test {
 
 //        System.out.println(outputStream.collect(Collectors.toSet()));
         List<Integer> result = null ;
-        System.out.println(result.stream().collect(Collectors.toList()));
-        System.out.println(result.stream().collect(Collectors.toSet()));
+//        System.out.println(result.stream().collect(Collectors.toList()));
+//        System.out.println(result.stream().collect(Collectors.toSet()));
 
 //       System.out.println(outputStream.collect(Collectors.joining()).toString());
 

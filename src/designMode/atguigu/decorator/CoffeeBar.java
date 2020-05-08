@@ -10,21 +10,20 @@ public class CoffeeBar {
 		System.out.println("费用1=" + order.cost());
 		System.out.println("描述=" + order.getDes());
 
-		// 2. order 加入一份牛奶
+		// 2. order 加入一份牛奶,装饰一下
+		// 动态的将新功能附加到对象上,开闭原则(OCP)
 		order = new Milk(order);
 
-		System.out.println("order 加入一份牛奶 费用 =" + order.cost());
+		System.out.println("order 加入一份牛奶 费用 = " + order.cost());
 		System.out.println("order 加入一份牛奶 描述 = " + order.getDes());
 
 		// 3. order 加入一份巧克力
-
 		order = new Chocolate(order);
 
 		System.out.println("order 加入一份牛奶 加入一份巧克力 费用 =" + order.cost());
 		System.out.println("order 加入一份牛奶 加入一份巧克力 描述 = " + order.getDes());
 
-		// 3. order 加入一份巧克力
-
+		// 4. order 加入一份巧克力
 		order = new Chocolate(order);
 
 		System.out.println("order 加入一份牛奶 加入2份巧克力 费用 =" + order.cost());

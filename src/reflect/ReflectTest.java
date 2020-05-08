@@ -5,6 +5,18 @@ import java.lang.reflect.*;
 /**
  * Created by chunchen.meng on 2019/6/27.
  * https://blog.csdn.net/ljphhj/article/details/12858767
+ *
+ * 应用场景
+ * 逆向代码 ，例如反编译
+ * 与注解相结合的框架 例如Retrofit
+ * 单纯的反射机制应用框架 例如EventBus 2.x
+ * 动态生成类框架 例如Gson
+ *
+ * 优点：
+ *     运行期类型的判断，动态类加载，动态代理使用反射。
+ *
+ *  缺点：
+ *     性能是一个问题，反射相当于一系列解释操作，通知jvm要做的事情，性能比直接的java代码要慢很多。
  */
 public class ReflectTest {
     /**
