@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.*;
+import java.util.stream.Collectors;
 
 /**
  * https://www.toutiao.com/i6770858450273436164/?tt_from=weixin&utm_campaign=client_share&wxshare_count=1&timestamp=1578316045&app=news_article&utm_source=weixin&utm_medium=toutiao_android&req_id=202001062107250100140470770B4C6D28&group_id=6770858450273436164
@@ -173,9 +174,12 @@ public class lambdaTest {
     public void test11() {
         PrintStream ps = System.out;
         Consumer<String> con = x -> ps.println(x);
+        con.accept("test");
 
         PrintStream ps1 = System.out;
         Consumer<String> con1 = ps1::println;
+        con1.accept("test11");
+
 
         Consumer<String> con2 = System.out::println;
         con2.accept("mcc");
@@ -274,7 +278,26 @@ public class lambdaTest {
         System.out.println(strings1.length);
     }
 
+    @Test
+    public void test88() {
+        Employee employee = new Employee(1, "a", 10, 20d);
+        Employee employee2 = new Employee(1, "a", 10, 20d);
+        Employee employee3 = new Employee(1, "a", 10, 20d);
+        List<Employee> employees = Arrays.asList(employee, employee2, employee3);
+        //employees 会变  Employee 对象,引用传递
+        employees.stream().map(p -> {
+            p.age = p.age + 10;
+            return p;
+        }).collect(Collectors.toList());
+        //employees 没有变,没有终止操作
+        employees.stream().map(p -> {
+            p.age = p.age + 10;
+            return p;
+        });
 
+        System.out.println(employees);
+
+    }
 
     public class Employee {
 

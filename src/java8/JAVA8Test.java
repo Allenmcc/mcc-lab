@@ -180,6 +180,21 @@ public class JAVA8Test {
                     return p * 10;
                 })
                 .forEach(p -> System.out.println("c:" + Thread.currentThread() + p));
+
+        //numbers 没有变
+        numbers.parallelStream().map(p -> {
+            p=p*10;
+            return p ;
+        }).collect(Collectors.toList());
+
+        //numbers 变成新的list
+       numbers = numbers.parallelStream().map(p -> {
+            p=p*10;
+            return p ;
+        }).collect(Collectors.toList());
+
+        List<String> strings =  numbers.parallelStream().map(p->p.toString()).collect(Collectors.toList());
+        System.out.println(strings);
     }
 
 }
