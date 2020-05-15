@@ -26,7 +26,6 @@ public class DeepProtoType implements Serializable, Cloneable{
 		DeepProtoType deepProtoType = (DeepProtoType)deep;
 		deepProtoType.deepCloneableTarget  = (DeepCloneableTarget)deepCloneableTarget.clone();
 		
-		// TODO Auto-generated method stub
 		return deepProtoType;
 	}
 

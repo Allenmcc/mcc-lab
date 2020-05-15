@@ -3,7 +3,7 @@ package designMode.atguigu.adapter.objectadapter;
 //适配器类
 public class VoltageAdapter  implements IVoltage5V {
 
-	private Voltage220V voltage220V; // 关联关系-聚合
+	private Voltage220V voltage220V; // 关联关系-聚合(类适配器是继承)
 	
 
 	//通过构造器，传入一个Voltage220V 实例

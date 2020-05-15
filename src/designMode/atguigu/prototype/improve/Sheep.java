@@ -48,10 +48,8 @@ public class Sheep implements Cloneable {
 		try {
 			sheep = (Sheep)super.clone();
 		} catch (Exception e) {
-			// TODO: handle exception
 			System.out.println(e.getMessage());
 		}
-		// TODO Auto-generated method stub
 		return sheep;
 	}
 	

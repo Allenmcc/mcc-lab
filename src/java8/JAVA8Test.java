@@ -154,10 +154,16 @@ public class JAVA8Test {
         numbers.parallelStream()
                 .map(p->p+1).map(p-> p*2).forEach(p-> System.out.println(p));
 
+        //和之前Intergr类型不一样
+        List<String> nStrs = numbers.stream().map(p -> p + "tt").collect(Collectors.toList());
+        nStrs.forEach(p-> System.out.println(p));
+
+
         List<String> ss = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
     // 获取空字符串的数量
         long count = ss.parallelStream().filter(string -> string.isEmpty()).count();
         System.out.println(count);
+
 
 
 
