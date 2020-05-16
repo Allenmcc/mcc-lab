@@ -11,15 +11,16 @@ public class AtomicIntegerTest {
 
     private static final int THREADS_CONUT = 20;
 //    public static int count = 0;   //可能<20000
-    public static volatile int count = 0; //也可能<20000
-//    public static AtomicInteger count = new AtomicInteger(0); //等于20000
+//    public static volatile int count = 0; //也可能<20000
+    public static AtomicInteger count = new AtomicInteger(0); //等于20000
 
 
 
     public static void increase() {
-        count++;  //不保证原子性，某个线程count++后assign后没有拿到lock，监听总线，将工作内存count失效，丢失本次++
-//        count.incrementAndGet();  //保证原子性
-        System.out.println(count);
+//    public synchronized static void increase() {
+//        count++;  //不保证原子性，某个线程count++后assign后没有拿到lock，监听总线，将工作内存count失效，丢失本次++
+        count.incrementAndGet();  //保证原子性，cas
+//        System.out.println(count);
     }
 
     public static void main(String[] args) {
@@ -39,6 +40,6 @@ public class AtomicIntegerTest {
 //        while (Thread.activeCount() > 1) {
 //            Thread.yield();
 //        }
-//        System.out.println(count);
+//        System.out.println("result is :"+count);
     }
 }
