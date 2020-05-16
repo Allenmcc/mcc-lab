@@ -27,6 +27,8 @@ public class ABATest {
         try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
         System.out.println("=====ABA问题解决========");
         new Thread(()->{
+
+            //100->101->100
             int stamp = atomicStampedReference.getStamp();
             System.out.println(Thread.currentThread().getName()+"\t 第一次版本号"+stamp);
 
