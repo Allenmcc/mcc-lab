@@ -53,7 +53,6 @@ public class DeepProtoType implements Serializable, Cloneable{
 			return copyObj;
 			
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			return null;
 		} finally {
@@ -64,7 +63,6 @@ public class DeepProtoType implements Serializable, Cloneable{
 				bis.close();
 				ois.close();
 			} catch (Exception e2) {
-				// TODO: handle exception
 				System.out.println(e2.getMessage());
 			}
 		}

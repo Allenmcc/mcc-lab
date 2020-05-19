@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class AtomicIntegerTest {
 
     private static final int THREADS_CONUT = 200;
-//    public static int count = 0;   //可能<20000
+//    public static int count = 0;   //可能<20000,线程间没有可见性,以最后写入主内存的那个线程的count值为准.
 //    public static volatile int count = 0; //也可能<20000
     public static AtomicInteger count = new AtomicInteger(0); //等于20000
 

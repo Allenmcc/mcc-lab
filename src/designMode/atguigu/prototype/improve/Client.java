@@ -11,7 +11,7 @@ public class Client {
 		
 		sheep.friend = new Sheep("jack", 2, "黑色");
 		
-		Sheep sheep2 = (Sheep)sheep.clone(); //克隆
+		Sheep sheep2 = (Sheep)sheep.clone(); //克隆  浅拷贝,对象传递引用
 		Sheep sheep3 = (Sheep)sheep.clone(); //克隆
 		Sheep sheep4 = (Sheep)sheep.clone(); //克隆
 		Sheep sheep5 = (Sheep)sheep.clone(); //克隆
@@ -20,6 +20,13 @@ public class Client {
 		System.out.println("sheep3 =" + sheep3 + "sheep3.friend=" + sheep3.friend.hashCode());
 		System.out.println("sheep4 =" + sheep4 + "sheep4.friend=" + sheep4.friend.hashCode());
 		System.out.println("sheep5 =" + sheep5 + "sheep5.friend=" + sheep5.friend.hashCode());
+
+		System.out.println(sheep.hashCode());
+		System.out.println(sheep2.hashCode());
+		System.out.println(sheep3.hashCode());
+		System.out.println(sheep4.hashCode());
+		System.out.println(sheep5.hashCode());
+
 	}
 
 }

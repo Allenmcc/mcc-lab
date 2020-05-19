@@ -1,5 +1,8 @@
 package designMode.atguigu.singleton.type8;
 
+/**
+ * 枚举 推荐
+ */
 public class SingletonTest08 {
 	public static void main(String[] args) {
 		Singleton instance = Singleton.INSTANCE;
@@ -7,7 +10,7 @@ public class SingletonTest08 {
 		System.out.println(instance == instance2);
 		
 		System.out.println(instance.hashCode());
-		System.out.println(instance2.hashCode());
+		System.	out.println(instance2.hashCode());
 		
 		instance.sayOK();
 	}

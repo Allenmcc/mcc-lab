@@ -14,18 +14,29 @@ public class SingletonTest04 {
 
 }
 
-// 懒汉式，线程安全，同步方法
+// 懒汉式，线程安全，同步方法,不推荐
 class Singleton {
 	private static Singleton instance;
 	
 	private Singleton() {}
 	
 	//提供一个静态的公有方法，加入同步处理的代码，解决线程安全的问题
-	//懒汉式
+	//懒汉式,执行好一次之后,后面只需要return就可以,没有必要等待
 	public static synchronized Singleton getInstance() {
 		if(instance == null) {
 			instance = new Singleton();
 		}
 		return instance;
 	}
+
+	//同步代码块,线程安全,不推荐使用
+//	public static Singleton getInstance() {
+//		if (instance == null) {
+//			synchronized (Singleton.class) {
+//				instance = new Singleton();
+//
+//			}
+//		}
+//		return instance;
+//	}
 }

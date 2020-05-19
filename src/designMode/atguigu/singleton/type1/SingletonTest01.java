@@ -15,7 +15,7 @@ public class SingletonTest01 {
 
 }
 
-//饿汉式（静态变量）
+//饿汉式（静态常量） 推荐
 class Singleton {
 	
 	//1. 构造器私有化，外部能new
@@ -24,6 +24,8 @@ class Singleton {
 	}
 
 	//2.本类内部创建实例对象
+	//优点:类装载时候完成实例化,避免线程同步问题.
+	//缺点:类装载时候完成实例化,如果从始至终未使用这个实例,则会造成内存浪费.
 	private final static Singleton instance = new Singleton();
 
 	//3.提供一个公有的静态方法，返回实例对象
