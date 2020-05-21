@@ -8,11 +8,10 @@ package pattern.generic;
  */
 public class MaximumTest {
 
-    // 比较三个值并返回最大值
-    public static <T extends Comparable<T>> T maximum(T x, T y, T z)
-    {
+    // 比较三个值并返回最大值  <T extends Comparable<T>> 泛型申明,有界类型参数
+    public static <T extends Comparable<T>> T maximum(T x, T y, T z) {
         T max = x; // 假设x是初始最大值
-        if ( y.compareTo( max ) > 0 ){
+        if ( y.compareTo( max ) > 0 ){  //如果是Interger ,调用Integer实现的compareTo();
             max = y; //y 更大
         }
         if ( z.compareTo( max ) > 0 ){
@@ -20,8 +19,7 @@ public class MaximumTest {
         }
         return max; // 返回最大对象
     }
-    public static void main( String args[] )
-    {
+    public static void main( String args[] ) {
         System.out.printf( "%d, %d 和 %d 中最大的数为 %d\n\n",
                 3, 4, 5, maximum( 3, 4, 5 ) );
 
