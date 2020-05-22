@@ -30,13 +30,13 @@ public abstract class OrderPizza {
 		} while (true);
 	}
 
-	
 
-	// дһ�����������Ի�ȡ�ͻ�ϣ����������������
+
+	// 写一个方法,可以获取客户希望订购的披萨种类
 	private String getType() {
 		try {
 			BufferedReader strin = new BufferedReader(new InputStreamReader(System.in));
-			System.out.println("input pizza ����:");
+			System.out.println("input pizza 种类:");
 			String str = strin.readLine();
 			return str;
 		} catch (IOException e) {

@@ -13,6 +13,7 @@ public class LDFactory implements AbsFactory {
 		System.out.println("~使用抽象工厂模式~");
 		Pizza pizza = null;
 		if (orderType.equals("cheese")) {
+			// 依赖 组合
 			pizza = new LDCheesePizza();
 		} else if (orderType.equals("pepper")) {
 			pizza = new LDPepperPizza();

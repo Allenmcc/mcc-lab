@@ -1,10 +1,10 @@
 package designMode.atguigu.factory.absfactory.pizzastore.pizza;
 
-//��Pizza �����ɳ���
+//
 public abstract class Pizza {
-	protected String name; //����
+	protected String name;
 
-	//׼��ԭ����, ��ͬ��������һ������ˣ��������ɳ��󷽷�
+	//准备
 	public abstract void prepare();
 
 	
@@ -16,7 +16,7 @@ public abstract class Pizza {
 		System.out.println(name + " cutting;");
 	}
 
-	//���
+	//打包
 	public void box() {
 		System.out.println(name + " boxing;");
 	}

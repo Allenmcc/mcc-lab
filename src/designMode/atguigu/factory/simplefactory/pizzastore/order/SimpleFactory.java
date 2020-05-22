@@ -5,31 +5,30 @@ import designMode.atguigu.factory.simplefactory.pizzastore.pizza.GreekPizza;
 import designMode.atguigu.factory.simplefactory.pizzastore.pizza.PepperPizza;
 import designMode.atguigu.factory.simplefactory.pizzastore.pizza.Pizza;
 
-//�򵥹�����
+//减掉工厂
 public class SimpleFactory {
 
-	//����orderType ���ض�Ӧ��Pizza ����
+	//
 	public Pizza createPizza(String orderType) {
 
 		Pizza pizza = null;
 
-		System.out.println("ʹ�ü򵥹���ģʽ");
+		System.out.println("订购披萨");
 		if (orderType.equals("greek")) {
 			pizza = new GreekPizza();
-			pizza.setName(" ϣ������ ");
+			pizza.setName(" 希腊披萨 ");
 		} else if (orderType.equals("cheese")) {
 			pizza = new CheesePizza();
-			pizza.setName(" �������� ");
+			pizza.setName(" 奶酪披萨 ");
 		} else if (orderType.equals("pepper")) {
 			pizza = new PepperPizza();
-			pizza.setName("��������");
+			pizza.setName("胡椒披萨");
 		}
 		
 		return pizza;
 	}
 	
 	//简单工厂模式也叫静态工厂模式
-	
 	public static Pizza createPizza2(String orderType) {
 
 		Pizza pizza = null;

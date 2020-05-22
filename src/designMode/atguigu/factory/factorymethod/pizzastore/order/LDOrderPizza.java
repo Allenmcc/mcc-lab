@@ -19,7 +19,6 @@ public class LDOrderPizza extends OrderPizza {
 		} else if (orderType.equals("pepper")) {
 			pizza = new LDPepperPizza();
 		}
-		// TODO Auto-generated method stub
 		return pizza;
 	}
 

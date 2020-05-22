@@ -25,23 +25,23 @@ public class OrderPizza {
 			orderType = getType();
 			// factory 可能是北京的工厂子类，也可能是伦敦的工厂子类
 			pizza = factory.createPizza(orderType);
-			if (pizza != null) { // ����ok
+			if (pizza != null) { // 订购成功
 				pizza.prepare();
 				pizza.bake();
 				pizza.cut();
 				pizza.box();
 			} else {
-				System.out.println("订购失败");
+				System.out.println("订购披萨失败");
 				break;
 			}
 		} while (true);
 	}
 
-	// дһ�����������Ի�ȡ�ͻ�ϣ����������������
+	// 写一个方法,可以获取客户希望订购的披萨种类
 	private String getType() {
 		try {
 			BufferedReader strin = new BufferedReader(new InputStreamReader(System.in));
-			System.out.println("input pizza ����:");
+			System.out.println("input pizza 种类:");
 			String str = strin.readLine();
 			return str;
 		} catch (IOException e) {
