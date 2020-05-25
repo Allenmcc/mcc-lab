@@ -16,6 +16,14 @@ public class StringTest {
 
     public static void main(String[] args) {
 
+
+        String lenth500 = "产品线:21;产品类型:hardware;品牌:联想（北京）信息技术有限公司;名称:服务器;产品型号:;产品描述:1、机架式服务器，2个英特尔® 至强® 可扩展处理器Bronze(铜) 3204 1.9GHz 6C(核) 85W 8.25MB三级缓存 9.6 GT/s UPI 85W，支持最大内存速度2133 MHz，最大支持2颗CPU，4条16GB TruDDR4 2666 MHz (2Rx8 1.2V) RDIMM内存(7X77A01303)，具备12个内存插槽，支持最大可配置(单CPU 6个\\\\双CPU 12个内存)，配置3块600GB 2.5英寸SAS硬盘, 标配\\\\最大支持8个2.5\\\"硬盘背板插槽，标配RAID 730-8i 1GB Cache PCIe 12Gbps 阵列卡,支持RAID0/1/10/5/50(7Y37A01083)，标配2个集成1GbE RJ-45网口(非LOM卡，标配LOM卡槽为空，可选填)和1个管理网络端口，2个USB3.0接口和1个VGA接口，标配2个PCIE插槽（Raid卡占用1个），通过添加选件Riser卡2可最大支持3个PCIe 3.0插槽（2个空";
+
+        System.out.println(lenth500.length());
+
+        String fiLength = lenth500.length() >=500?lenth500.substring(0,500):lenth500;
+        System.out.println(fiLength);
+
 //        String test = "121212";
 //        System.out.println(test.substring(0,20));
 

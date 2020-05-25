@@ -32,10 +32,11 @@ public class MapTest {
 
         //initialCapacity = (需要存储的元素个数 / 负载因子) + 1公式计算后设置
         //反例：HashMap需要放置1024个元素，由于没有设置容量初始大小，随着元素不断增加，容量7次被迫扩大，resize需要重建hash表，严重影响性能。
-        Map<String, Object> map = new HashMap<>(4);
+        Map<String, Object> map = new LinkedHashMap<>(4);
         map.put("1","a");
-        map.put("2","b");
-        map.put("3","c");
+        //LinkedHashMap保证顺序,Hash默认key排序
+        map.put("3","b");
+        map.put("2","c");
         map.put("4","d");
         map.put("5","e");
         map.put("6","e");
@@ -43,6 +44,31 @@ public class MapTest {
         map.put("8","e");
 
         System.out.println(map);
+
+        Iterator it = map.entrySet().iterator();
+        while (it.hasNext()){
+          Map.Entry entry = (Map.Entry)  it.next();
+            System.out.println(entry.getKey() +":"+entry.getValue());
+        }
+
+        Iterator it2 = map.keySet().iterator();
+        while (it2.hasNext()){
+            String s = (String) it2.next();
+            System.out.println(s);
+        }
+
+
+        //hashmap是无序的
+        HashMap<Integer, String> hmap = new HashMap<>();
+        hmap.put(13, "Yellow");
+        hmap.put(3, "Red");
+        hmap.put(2, "Green");
+        hmap.put(33, "Blue");
+        System.out.println("key & values in hmap:");
+        for (Map.Entry entry : hmap.entrySet()) {
+            System.out.println("key: " + entry.getKey() + ", value: " + entry.getValue());
+        }
+
 
         Map<String, Object> mapall = new HashMap<>(4);
         mapall.put("1","aa");

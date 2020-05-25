@@ -43,7 +43,7 @@ public class Strategy {
 		//方式1
 		Arrays.sort(data, comparator);
 		
-		System.out.println(Arrays.toString(data)); // ��������
+		System.out.println(Arrays.toString(data)); //
 
 		
 		//方式2-同时用lamda表达式实现

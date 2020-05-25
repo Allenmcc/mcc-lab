@@ -98,7 +98,7 @@ public class JAVA8Test {
         b.age = 20;
 
         Person c = new Person();
-        c.id = 2;
+        c.id = 0;
         c.age = 30;
         list.add(a);
         list.add(b);
@@ -122,7 +122,8 @@ public class JAVA8Test {
         System.out.println(list.size());
 
         //sorted
-       List<Person> sortedPersons =  list.stream().sorted(Comparator.comparing(Person::getAge).reversed()).collect(Collectors.toList());
+//       List<Person> sortedPersons =  list.stream().sorted(Comparator.comparing(Person::getAge).reversed()).collect(Collectors.toList());
+       List<Person> sortedPersons =  list.stream().sorted(Comparator.comparing(Person::getAge)).collect(Collectors.toList());
        //reversed() 只能Person::getAge() 形式
        List<Person> sortedPersons2 =  list.stream().sorted(Comparator.comparing(p->p.getAge())).collect(Collectors.toList());
 

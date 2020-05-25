@@ -36,7 +36,7 @@ public class MultimapTest {
         System.out.println("Multimap as a map");
         for (Map.Entry<String,  Collection<String>> entry : map.entrySet()) {
             String key = entry.getKey();
-            Collection<String> value =  multimap.get("lower");
+            Collection<String> value =  multimap.get(key);
             System.out.println(key + ":" + value);
         }
 
