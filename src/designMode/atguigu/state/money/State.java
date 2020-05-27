@@ -1,49 +1,49 @@
 package designMode.atguigu.state.money;
 
 /**
- * ״̬�ӿ�
+ * 状态接口
  * @author Administrator
  *
  */
 public interface State {
 
 	/**
-     * ����
+     * 电审
      */
     void checkEvent(Context context);
 
     /**
-     * ����ʧ��
+     * 电审失败
      */
     void checkFailEvent(Context context);
 
     /**
-     * ���۷���
+     * 定价发布
      */
     void makePriceEvent(Context context);
 
     /**
-     * �ӵ�
+     * 接单
      */
     void acceptOrderEvent(Context context);
 
     /**
-     * ���˽ӵ�ʧЧ
+     * 无人接单失效
      */
     void notPeopleAcceptEvent(Context context);
 
     /**
-     * ����
+     * 付款
      */
     void payOrderEvent(Context context);
 
     /**
-     * �ӵ�����֧��ʧЧ
+     * 接单有人支付失败
      */
     void orderFailureEvent(Context context);
 
     /**
-     * ����
+     * 反馈
      */
     void feedBackEvent(Context context);
 

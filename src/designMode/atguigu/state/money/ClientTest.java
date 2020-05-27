@@ -4,7 +4,6 @@ package designMode.atguigu.state.money;
 public class ClientTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		//创建context 对象
 		Context context = new Context();
         //将当前状态设置为 PublishState

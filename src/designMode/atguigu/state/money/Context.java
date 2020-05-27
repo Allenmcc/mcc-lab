@@ -3,6 +3,7 @@ package designMode.atguigu.state.money;
 //环境上下文
 public class Context extends AbstractState{
 	//当前的状态 state, 根据我们的业务流程处理，不停的变化
+    //依赖 组合关系
 	private State state;
 
     @Override
@@ -25,6 +26,7 @@ public class Context extends AbstractState{
 
     @Override
     public void acceptOrderEvent(Context context) {
+        //this 就是 context
         state.acceptOrderEvent(this);
         getCurrentState();
     }

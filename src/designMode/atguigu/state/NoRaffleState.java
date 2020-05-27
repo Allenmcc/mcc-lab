@@ -8,6 +8,7 @@ package designMode.atguigu.state;
 public class NoRaffleState extends State {
 
 	 // 初始化时传入活动引用，扣除积分后改变其状态
+    //关联关系,双向一对一
     RaffleActivity activity;
 
     public NoRaffleState(RaffleActivity activity) {

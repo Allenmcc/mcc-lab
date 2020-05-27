@@ -1,7 +1,7 @@
 package designMode.atguigu.state.money;
 
 /**
- * ״̬ö����
+ *
  * @author Administrator
  *
  */

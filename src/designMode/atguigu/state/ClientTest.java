@@ -8,7 +8,6 @@ package designMode.atguigu.state;
 public class ClientTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		// 创建活动对象，奖品有一个奖品
         RaffleActivity activity = new RaffleActivity(1);
 

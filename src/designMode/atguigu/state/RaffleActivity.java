@@ -14,6 +14,7 @@ public class RaffleActivity {
     int count = 0;
     
     // 四个属性表示四个状态
+    //关联关系,双向一对一
     State noRafflleState = new NoRaffleState(this);
     State canRaffleState = new CanRaffleState(this);
     
@@ -24,6 +25,7 @@ public class RaffleActivity {
     //1.初始化当前状态 noRafflleState （即不能抽奖状态）
     //2. 初始化奖品的数量
     public RaffleActivity( int count) {
+        //不能抽奖状态
         this.state = getNoRafflleState();
         this.count = count;
     }
