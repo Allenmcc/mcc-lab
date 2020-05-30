@@ -12,8 +12,18 @@ public class VolatileVisiableTest {
                 System.out.println("waitting data...");
                 while (!initFlag){
 
+//                    System.out.println(" System.out.println ...");
+//                    try {
+//                        Thread.sleep(2000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+
+                    for(int k=0;k<100000;k++){
+                        new Object();
+                    }
                 }
-                System.out.println("============success");
+                System.out.println("============success======");
             }
         }).start();
 
