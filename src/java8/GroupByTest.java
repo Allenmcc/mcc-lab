@@ -3,11 +3,13 @@ package java8;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
+import threads.semaphore.Log;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -18,12 +20,25 @@ public class GroupByTest {
 
     public static void main(String[] args) {
 
-        List<Fruit> fruitList = Lists.newArrayList(new Fruit("apple", 6.0),
+        List<Fruit> fruitList = Lists.newArrayList(
+                new Fruit("apple", 6.0),
                 new Fruit("apple", 6.0),
                 new Fruit("banana", 7.0),
                 new Fruit("banana", 7.0),
                 new Fruit("banana", 7.0),
                 new Fruit("grape", 8.0));
+
+
+        Function<Fruit,List<Object>> compositeKey = p-> Arrays.asList(p.getName(),p.getPrice());
+       //key是集合Arrays.asList(p.getName(),p.getPrice())
+
+        Map<Object, Long> mapp = fruitList.stream().collect(Collectors.groupingBy(compositeKey,Collectors.counting()));
+        //数量大于1输出
+        for (Map.Entry<Object,Long> entry:mapp.entrySet()){
+            if(entry.getValue()>=2){
+                System.out.println("包含重复"+entry.getKey());
+            }
+        }
 
         Map<String, Long> map = fruitList.stream().
                 collect(Collectors.groupingBy(Fruit::getName, Collectors.counting()));

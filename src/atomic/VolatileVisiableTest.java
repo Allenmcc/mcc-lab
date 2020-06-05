@@ -12,6 +12,8 @@ public class VolatileVisiableTest {
                 System.out.println("waitting data...");
                 while (!initFlag){
 
+//                    System.out.println("inner data...");   //读最新的,可见性.
+
 //                    System.out.println(" System.out.println ...");
 //                    try {
 //                        Thread.sleep(2000);
@@ -19,15 +21,15 @@ public class VolatileVisiableTest {
 //                        e.printStackTrace();
 //                    }
 
-                    for(int k=0;k<100000;k++){
-                        new Object();
-                    }
+//                    for(int k=0;k<100000;k++){
+//                        new Object();
+//                    }
                 }
                 System.out.println("============success======");
             }
         }).start();
 
-        Thread.sleep(2000);
+        Thread.sleep(2000);   //如果不睡眠,可能下面先执行,上面线程sout就读到最新的,就能执行完成.
 
         //模拟一个线程等待数据
         new Thread(new Runnable() {
