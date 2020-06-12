@@ -1,8 +1,8 @@
 package odering;
 
 import com.google.common.base.Function;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,18 +41,6 @@ public class testNatural {
         }
 
 
-//        List<? extends Number> foo1 = new ArrayList<? extends Number>();
-//
-//
-//        List<? extends Number> foo2 = new ArrayList<? extends Integer>();
-//
-//        List<? super Integer> foo3 = new ArrayList<Number>();
-
-        ArrayList<String> arrayList1=new ArrayList<String>();
-        arrayList1.add("abc");
-        ArrayList<Integer> arrayList2=new ArrayList<Integer>();
-        arrayList2.add(123);
-        System.out.println(arrayList1.getClass()==arrayList2.getClass());
     }
 
 

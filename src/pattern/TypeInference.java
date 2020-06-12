@@ -1,6 +1,11 @@
 package pattern;
 
+import com.google.common.collect.Lists;
+import org.junit.Test;
+
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -24,15 +29,13 @@ import java.util.Set;
  * <? super Person> 向上限定，person 及其父类
  *
  *
- * 泛型通配符不是用在定义对象上 ArrayList<?> list= new ArraryList();
- * 用在方法形参上
+ * 泛型通配符不是用在定义对象上 ArrayList<?> list= new ArraryList(),而是用在方法形参上
  *
  * 为啥要有泛型通配符？因为集合没有协变
- * 但数组有协变（子类可以放到父类的数组里面：多态）method(Person[] ps) 调用Person[] 和 Student[] 都可以
+ * 但数组有协变（子类可以放到父类的数组里面：多态）method(Person[] ps):调用Person[]和 Student[]都可以
  *
- * 但集合没有协变（子类可以放到父类的数组里面：多态）method(ArraryList<Person> list)
- * 调用List<Person>可以 和List<Student> 不可以，必须一一对应
- * 所有出现泛型通配符
+ * 但集合没有协变（子类可以放到父类的数组里面：多态）method(ArraryList<Person> list):调用List<Person>可以和List<Student>不可以，必须一一对应
+ * ------------->所有出现泛型通配符
  *
  */
 public class TypeInference {
@@ -51,6 +54,34 @@ public class TypeInference {
         numbers = TypeInference.union(integers, doubles);    // Error
 //        numbers = TypeInference.<Number>union(integers, doubles);   // OK
         System.out.println(numbers.size());
+    }
+
+
+    @Test
+    public void test(){
+        //      编译保错,泛型通配符不用在对象上,
+//        List<? extends Number> foo1 = new ArrayList<? extends Number>();
+        //而是用在方法形参上
+        List<? extends Number > foo1 = new ArrayList<>();
+
+        //报错?
+//        foo1.add(12);
+        //正确
+        List<? extends Number > foo11 = Lists.newArrayList(12,3);
+
+        //报错
+//        ArrayList<?> listttt= new ArrayList<>();
+//        listttt.add(1);
+//
+//        List<? extends Number> foo2 = new ArrayList<? extends Integer>();
+//
+//        List<? super Integer> foo3 = new ArrayList<Number>();
+
+        ArrayList<String> arrayList1=new ArrayList<String>();
+        arrayList1.add("abc");
+        ArrayList<Integer> arrayList2=new ArrayList<Integer>();
+        arrayList2.add(123);
+        System.out.println(arrayList1.getClass()==arrayList2.getClass());
     }
 
 }

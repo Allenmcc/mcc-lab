@@ -5,6 +5,7 @@ package patternDemo;
  */
 public class Demo {
     public static void main(String arsg[]) {
+        //使用时制定类型,因为InfoImp<T> 泛型类
         Info<String> obj = new InfoImp<String>("www.weixueyuan.net");
       //实现接口
         Info<String> obj2 = new Info<String>() {
@@ -34,6 +35,10 @@ public class Demo {
         System.out.println(test.getVar());
         System.out.println(getInfo().getVar());
         System.out.println(getInfoByImp().getVar());
+
+        Info infoImp2 = new InfoImp2("2332");
+
+        System.out.println(infoImp2.getVar());
     }
 
 

@@ -1,7 +1,9 @@
 package pattern;
 
 import com.google.common.collect.Lists;
+import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -55,11 +57,17 @@ public class Generic<T extends Number> {
         showKeyName(generic2);
 
         List<? extends String> names = Lists.newArrayList("yiifaa");
+
+        //报错
+//        names.add("test");
         //  声明消费者
         List<String> allNames = Lists.newArrayList("yiifee");
         //  消费生产者的元素
         allNames.addAll(allNames);
 
     }
+
+
+
 
 }

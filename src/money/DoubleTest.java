@@ -2,6 +2,7 @@ package money;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 /**
  * Created by chunchen.meng on 2019/2/22.
@@ -85,6 +86,22 @@ public class DoubleTest {
         System.out.println(before2.equals(BigDecimal.ZERO));
         //b.compareTo(BigDecimal.ZERO)==0，可以比较是否等于0，返回true则等于0，返回false，则不等于0
         System.out.println(before2.compareTo(BigDecimal.ZERO)== 0);
+
+
+
+//        double distance = 20.234299999999998;
+        double distance = 20;
+
+        System.out.println("距离" + distance + "公里");
+
+        //距离20.234299999999998公里
+
+        DecimalFormat df = new DecimalFormat("0.00");//格式化，区小数后两位
+
+        String format = df.format(distance);
+
+        System.out.println("距离" + format + "公里");
+
 
     }
 
