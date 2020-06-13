@@ -27,12 +27,14 @@ public class Generic<T extends Number> {
         return key;
     }
 
+
+    //泛型通配符是实现,上下边界写在方法参数前面!!!!
     public static void showKeyValue1(Generic<? extends Number> obj){
         System.out.println(obj.getKey());
     }
 
     ////泛型方法的泛型是加在返回类型前面
-    //在泛型方法中添加上下边界限制的时候，必须在权限声明与返回值之间的<T>上添加上下边界，
+    //在泛型方法中添加上下边界限制的时候，必须在权限声明与返回值之间的<T>上添加上下边界!!!!!!!!!!!!
     // 即在泛型声明的时候添加!!!!!!!!!!!!
    //public <T> T showKeyName(Generic<T extends Number> container)，编译器会报错："Unexpected bound"
     public static  <T extends Number> T showKeyName(Generic<T> container){
