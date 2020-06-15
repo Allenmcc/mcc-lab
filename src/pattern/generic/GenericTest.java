@@ -105,7 +105,8 @@ public class GenericTest {
 
         List<String>[] ls = new ArrayList[10];
 
-
+        String tt = "-30115000";
+        System.out.println(Integer.valueOf(tt));
 
     }
 }
