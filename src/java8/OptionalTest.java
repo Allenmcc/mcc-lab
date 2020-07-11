@@ -140,6 +140,13 @@ public class OptionalTest {
     @Test
     public void testOfNullable(){
 
+        String taskId ="";
+        StringBuilder stringBuilder = new StringBuilder("test");
+        stringBuilder.append("/").append("t2");
+//      ofNullable ->  Optional    ifPresent->Consumer
+        Optional.ofNullable(taskId).ifPresent(t -> stringBuilder.append("/").append(t));
+        System.out.println(stringBuilder.toString());
+
         //创建空Optional 对象
         Optional<Employee> op =  Optional.empty();
         System.out.println(op);

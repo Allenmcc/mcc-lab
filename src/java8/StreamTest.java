@@ -359,6 +359,12 @@ public class StreamTest {
 
     }
 
+//    @Test
+//    public void testBolean(){
+//        Boolean a = new Boolean();
+//        System.out.println(a);
+//    }
+
 
 
     public class Employee {
