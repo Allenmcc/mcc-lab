@@ -431,6 +431,7 @@ public class ComPleableFutureTest {
             @Override
             public Integer get() {
                 int t = new Random().nextInt(3);
+                System.out.println("1"+Thread.currentThread());
                 System.out.println("t1="+t);
                 return t;
             }
@@ -441,6 +442,7 @@ public class ComPleableFutureTest {
                     @Override
                     public Integer get() {
                         int t = param *2;
+                        System.out.println("2"+Thread.currentThread());
                         System.out.println("t2="+t);
                         return t;
                     }
@@ -448,6 +450,36 @@ public class ComPleableFutureTest {
             }
 
         });
+        System.out.println("3"+Thread.currentThread());
+        System.out.println("thenCompose result : "+f.get());
+    }
+
+    @Test
+    public void thenComposeAsync() throws Exception {
+        CompletableFuture<Integer> f = CompletableFuture.supplyAsync(new Supplier<Integer>() {
+            @Override
+            public Integer get() {
+                int t = new Random().nextInt(3);
+                System.out.println("1"+Thread.currentThread());
+                System.out.println("t1="+t);
+                return t;
+            }
+        }).thenComposeAsync(new Function<Integer, CompletionStage<Integer>>() {
+            @Override
+            public CompletionStage<Integer> apply(Integer param) {
+                return CompletableFuture.supplyAsync(new Supplier<Integer>() {
+                    @Override
+                    public Integer get() {
+                        int t = param *2;
+                        System.out.println("2"+Thread.currentThread());
+                        System.out.println("t2="+t);
+                        return t;
+                    }
+                });
+            }
+
+        });
+        System.out.println("3"+Thread.currentThread());
         System.out.println("thenCompose result : "+f.get());
     }
 
