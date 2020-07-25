@@ -15,6 +15,7 @@ public class DoubleTest {
     public static void main(String[] args) {
 
 
+        Double.compare(1.24, 0.15d) ;
         double a0=0.00d;
         Double aaa0 = 0.0;
         System.out.println(aaa0.equals(0.000d));
