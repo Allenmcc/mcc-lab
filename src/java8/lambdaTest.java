@@ -208,6 +208,9 @@ public class lambdaTest {
         Comparator<Integer> con = (x, y) -> Integer.compare(x, y);
         Comparator<Integer> con1 = Integer::compare;
 
+        System.out.println(con.compare(12,121));
+
+
     }
 
     //类：：实例方法

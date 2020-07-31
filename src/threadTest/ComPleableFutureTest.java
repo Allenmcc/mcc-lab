@@ -2,6 +2,8 @@ package threadTest;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
@@ -12,6 +14,9 @@ import java.util.function.Consumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
+
+import static org.junit.Assert.assertTrue;
 
 
 /**
@@ -42,7 +47,7 @@ public class ComPleableFutureTest {
 
     //有返回值
     @Test
-    public void    supplyAsync(){
+    public void   supplyAsync(){
         CompletableFuture<Long> future = CompletableFuture.supplyAsync(() -> {
             try {
                 TimeUnit.SECONDS.sleep(1);
@@ -481,6 +486,46 @@ public class ComPleableFutureTest {
         });
         System.out.println("3"+Thread.currentThread());
         System.out.println("thenCompose result : "+f.get());
+    }
+
+
+    @Test
+    public void allOf() {
+        CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
+            try {
+                System.out.println("feature");
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+            }
+            System.out.println("run end ...");
+        });
+        CompletableFuture<Void> future2 = CompletableFuture.runAsync(() -> {
+            try {
+                System.out.println("feature2");
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+            }
+            System.out.println("run end ...");
+        });
+
+        CompletableFuture<Void> future3 = CompletableFuture.runAsync(() -> {
+            try {
+                System.out.println("feature3");
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+            }
+            System.out.println("run end ...");
+        });
+
+        // 上面的示例是多个任务之间的调度，最后一个任务必须等之前的3个任务都完成后(allOf)，才能执行。
+        // 如果前面3个任务只有一个完成最后一个任务就可以执行,那就用anyOf方法，把上面代码中allOf改成anyOf，其他代码不变，执行结果如下：
+        CompletableFuture.allOf(future,future2,future3).thenAccept(
+                r -> {
+                    System.out.println("最后泡咖啡");
+                }
+        );
+        System.out.println("我是主线程");
+
     }
 
 }
