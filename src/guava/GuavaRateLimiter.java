@@ -33,7 +33,7 @@ public class GuavaRateLimiter {
         Integer processors = Runtime.getRuntime().availableProcessors();
         System.out.println(processors);
 
-        for (int i = 0; i < 500000000; i++) {
+        for (int i = 0; i < 50000000; i++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {

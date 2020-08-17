@@ -1,6 +1,5 @@
 package java8;
 
-import java.util.Objects;
 import java.util.function.BiConsumer;
 
 /**
@@ -20,12 +19,6 @@ public class BIConsumerTest {
         };
 
         consumer.andThen(consumer2).accept(10,2);
-
-        Boolean t = null;
-
-        System.out.println(t);
-
-
 
     }
 

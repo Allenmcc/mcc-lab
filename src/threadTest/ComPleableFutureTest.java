@@ -2,30 +2,32 @@ package threadTest;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
-import java.util.function.BiConsumer;
 import java.util.function.Consumer;
-import java.util.function.BiFunction;
-import java.util.function.Function;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
-
-import static org.junit.Assert.assertTrue;
+import java.util.function.*;
 
 
 /**
+ * CompletableFuture的命名规则
+ * xxx():继续在已有的线程中执行
+ * xxxAsync():用Executor的新线程执行
+ *
+ * CompletableFuture 对象可以制定异步处理流程
+ * thenAccept()处理正常结果
+ * exceptional处理异常结果
+ * thenApplyAsync()用于串行化另一个CompletableFuture
+ * anyOf/allOf用于并行化两个CompletableFuture
+ *
  * https://www.jianshu.com/p/6bac52527ca4
  */
 public class ComPleableFutureTest {
 
 
-    //无返回值
+    //无返回值runAsync
     @Test
     public void runAsync(){
         CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
@@ -45,7 +47,7 @@ public class ComPleableFutureTest {
         }
     }
 
-    //有返回值
+    //有返回值supplyAsync
     @Test
     public void   supplyAsync(){
         CompletableFuture<Long> future = CompletableFuture.supplyAsync(() -> {
@@ -84,6 +86,7 @@ public class ComPleableFutureTest {
 
         //whenComplete是执行当前任务的线程执行继续执行 whenComplete 的任务。
        // whenCompleteAsync：是执行把 whenCompleteAsync 这个任务继续提交给线程池来进行执行。
+        //whenComplete不会阻塞主线程,任务执行后的回掉
         future.whenComplete(new BiConsumer<Void, Throwable>() {
             @Override
             public void accept(Void t, Throwable action) {
@@ -92,6 +95,13 @@ public class ComPleableFutureTest {
             }
 
         });
+
+//        future.whenComplete((t,action)->{
+//            System.out.println("whenComplete :"+Thread.currentThread());
+//            System.out.println("执行完成！");
+//        });
+
+        System.out.println("主线程执行中");
         future.exceptionally(new Function<Throwable, Void>() {
             @Override
             public Void apply(Throwable t) {
@@ -229,7 +239,10 @@ public class ComPleableFutureTest {
                 return t+" "+u;
             }
         });
+
+        CompletableFuture<String> result2 = future1.thenCombine(future2, (t1,t2)->t1+" "+t2);
         System.out.println(result.get());
+        System.out.println(result2.get());
     }
 
 

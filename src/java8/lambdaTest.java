@@ -293,10 +293,10 @@ public class lambdaTest {
             return p;
         }).collect(Collectors.toList());
         //employees 没有变,没有终止操作
-        employees.stream().map(p -> {
-            p.age = p.age + 10;
-            return p;
-        });
+//        employees.stream().map(p -> {
+//            p.age = p.age + 10;
+//            return p;
+//        });
 
         System.out.println(employees);
 
