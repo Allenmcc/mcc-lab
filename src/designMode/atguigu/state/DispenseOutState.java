@@ -14,6 +14,7 @@ public class DispenseOutState extends State {
     public DispenseOutState(RaffleActivity activity) {
         this.activity = activity;
     }
+
     @Override
     public void deductMoney() {
         System.out.println("奖品发送完了，请下次参加");

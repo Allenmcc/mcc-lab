@@ -1,5 +1,10 @@
 package enumTest;
 
+
+/**
+ * 每个常量值都有相同的行为，但是具体的实现细节不同。
+ * 建议使用枚举抽象方法，好处：结构清晰，便于扩展。
+ */
 public enum WorkDays {
     MONDAY(1) {
         @Override

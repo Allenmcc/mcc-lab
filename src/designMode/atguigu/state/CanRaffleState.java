@@ -9,6 +9,7 @@ import java.util.Random;
  */
 public class CanRaffleState extends State {
 
+    //关联关系,双向一对一
     RaffleActivity activity;
 
     public CanRaffleState(RaffleActivity activity) {
@@ -35,7 +36,7 @@ public class CanRaffleState extends State {
         }else{
             System.out.println("很遗憾没有抽中奖品");
             // 改变状态为不能抽奖
-            activity.setState(activity.getNoRafflleState());
+            activity.setState(activity.getNoRaffleState());
             return false;
         }
     }

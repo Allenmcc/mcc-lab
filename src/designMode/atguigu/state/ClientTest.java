@@ -15,7 +15,7 @@ public class ClientTest {
         for (int i = 0; i < 30; i++) {
             System.out.println("--------第" + (i + 1) + "次抽奖----------");
             // 参加抽奖，第一步点击扣除积分
-            activity.debuctMoney();
+            activity.deductMoney();
 
             // 第二部抽奖
             activity.raffle();

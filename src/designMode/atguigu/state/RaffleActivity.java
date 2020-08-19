@@ -14,24 +14,24 @@ public class RaffleActivity {
     int count = 0;
     
     // 四个属性表示四个状态
-    //关联关系,双向一对一
-    State noRafflleState = new NoRaffleState(this);
+    //关联关系,双向一对一,双向一对一,双向一对一
+    State noRaffleState = new NoRaffleState(this);
     State canRaffleState = new CanRaffleState(this);
     
     State dispenseState =   new DispenseState(this);
-    State dispensOutState = new DispenseOutState(this);
+    State dispenseOutState = new DispenseOutState(this);
 
     //构造器
-    //1.初始化当前状态 noRafflleState （即不能抽奖状态）
+    //1.初始化当前状态 noRaffleState （即不能抽奖状态）
     //2. 初始化奖品的数量
     public RaffleActivity( int count) {
         //不能抽奖状态
-        this.state = getNoRafflleState();
+        this.state = getNoRaffleState();
         this.count = count;
     }
 
     //扣分，调用当前状态的deductMoney
-    public void debuctMoney(){
+    public void deductMoney(){
         state.deductMoney();
     }
 
@@ -64,12 +64,12 @@ public class RaffleActivity {
         this.count = count;
     }
 
-    public State getNoRafflleState() {
-        return noRafflleState;
+    public State getNoRaffleState() {
+        return noRaffleState;
     }
 
-    public void setNoRafflleState(State noRafflleState) {
-        this.noRafflleState = noRafflleState;
+    public void setNoRaffleState(State noRaffleState) {
+        this.noRaffleState = noRaffleState;
     }
 
     public State getCanRaffleState() {
@@ -88,11 +88,11 @@ public class RaffleActivity {
         this.dispenseState = dispenseState;
     }
 
-    public State getDispensOutState() {
-        return dispensOutState;
+    public State getDispenseOutState() {
+        return dispenseOutState;
     }
 
-    public void setDispensOutState(State dispensOutState) {
-        this.dispensOutState = dispensOutState;
+    public void setDispenseOutState(State dispenseOutState) {
+        this.dispenseOutState = dispenseOutState;
     }
 }
