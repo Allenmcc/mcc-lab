@@ -288,15 +288,15 @@ public class lambdaTest {
         Employee employee3 = new Employee(1, "a", 10, 20d);
         List<Employee> employees = Arrays.asList(employee, employee2, employee3);
         //employees 会变  Employee 对象,引用传递
-        employees.stream().map(p -> {
-            p.age = p.age + 10;
-            return p;
-        }).collect(Collectors.toList());
-        //employees 没有变,没有终止操作
 //        employees.stream().map(p -> {
 //            p.age = p.age + 10;
 //            return p;
-//        });
+//        }).collect(Collectors.toList());
+        //employees 没有变,没有终止操作
+        employees.stream().map(p -> {
+            p.age = p.age + 10;
+            return p;
+        });
 
         System.out.println(employees);
 

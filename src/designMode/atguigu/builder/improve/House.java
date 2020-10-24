@@ -1,6 +1,6 @@
 package designMode.atguigu.builder.improve;
 
-//��Ʒ->Product
+//Product本身
 public class House {
 	private String baise;
 	private String wall;

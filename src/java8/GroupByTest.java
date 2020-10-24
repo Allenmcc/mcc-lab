@@ -29,7 +29,7 @@ public class GroupByTest {
                 new Fruit("grape", 8.0));
 
 
-        Function<Fruit,List<Object>> compositeKey = p-> Arrays.asList(p.getName(),p.getPrice());
+        Function<Fruit,List<Object>> compositeKey = p-> Arrays.asList(p.getName(),p.getPrice(),null);
        //key是集合Arrays.asList(p.getName(),p.getPrice())
 
         Map<Object, Long> mapp = fruitList.stream().collect(Collectors.groupingBy(compositeKey,Collectors.counting()));

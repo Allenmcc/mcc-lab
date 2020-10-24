@@ -1,7 +1,5 @@
 package designMode.atguigu.factory.factorymethod.pizzastore.order;
 
-import designMode.atguigu.factory.factorymethod.pizzastore.pizza.BJCheesePizza;
-import designMode.atguigu.factory.factorymethod.pizzastore.pizza.BJPepperPizza;
 import designMode.atguigu.factory.factorymethod.pizzastore.pizza.LDCheesePizza;
 import designMode.atguigu.factory.factorymethod.pizzastore.pizza.LDPepperPizza;
 import designMode.atguigu.factory.factorymethod.pizzastore.pizza.Pizza;

@@ -68,6 +68,7 @@ public class StreamTest {
 
         //4.创建无限流
         Stream<Integer> stream1 = Stream.iterate(0, x -> x + 2);
+        //forEach(Consumer<? super T> action); 消费函数,没有返回值
         stream1.limit(10).forEach(System.out::println);
 
 

@@ -15,6 +15,7 @@ public class ListTest {
 //
         List<Integer> list1 = new LinkedList<>();
         List<Integer> list222 = new ArrayList<Integer>(){};
+        List<Integer> list33 = new ArrayList<Integer>(){};
 //        List<Integer> list222 = new ArrayList<Integer>(){{add(1);add(22);}};
         list1.add(1);
         list1.add(2);
@@ -23,6 +24,12 @@ public class ListTest {
         list1.add(5);
         list1.add(6);
         list1.add(7);
+
+        list33.add(4);
+        list33.add(40);
+        list1.removeAll(list33);
+
+//        list1.clear();
 
         list1.addAll(list222);
 

@@ -42,7 +42,7 @@ public class JAVA8Test {
         Stream<Integer> outputStream = inputStream.
                 flatMap((childList) -> childList.stream());
 
-//       System.out.println(outputStream.mapToInt(n->n).sum());
+       System.out.println(outputStream.mapToInt(n->n).sum());
 
         System.out.println(outputStream.collect(Collectors.toList()));
 
@@ -193,17 +193,18 @@ public class JAVA8Test {
                 })
                 .forEach(p -> System.out.println("c:" + Thread.currentThread() + p));
 
-        //numbers 没有变
+        //numbers 没有变,如果numbers是对象会变
         numbers.parallelStream().map(p -> {
             p=p*10;
             return p ;
         }).collect(Collectors.toList());
 
-        //numbers 变成新的list
+        //numbers 变成新的list (numbers 接受新的值)
        numbers = numbers.parallelStream().map(p -> {
             p=p*10;
             return p ;
         }).collect(Collectors.toList());
+
 
         List<String> strings =  numbers.parallelStream().map(p->p.toString()).collect(Collectors.toList());
         System.out.println(strings);

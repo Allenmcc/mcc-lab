@@ -86,6 +86,12 @@ public class OptionalTest {
         System.out.println(optional3.orElse("无值"));
         System.out.println(optional3.orElse(createNewUser()));
 
+        String npe = null;
+
+        System.out.println(Optional.ofNullable(npe).orElse(""));
+
+        System.out.println(optional3.orElse("无值"));
+
         //orElseGet
         System.out.println(optional3.orElseGet(() -> "default"));
 
