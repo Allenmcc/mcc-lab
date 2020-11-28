@@ -5,7 +5,7 @@ import designMode.atguigu.factory.simplefactory.pizzastore.pizza.GreekPizza;
 import designMode.atguigu.factory.simplefactory.pizzastore.pizza.PepperPizza;
 import designMode.atguigu.factory.simplefactory.pizzastore.pizza.Pizza;
 
-//减掉工厂
+//简单工厂(静态工厂模式)
 public class SimpleFactory {
 
 	//

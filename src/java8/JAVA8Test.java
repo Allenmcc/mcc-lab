@@ -210,5 +210,25 @@ public class JAVA8Test {
         System.out.println(strings);
     }
 
+
+    @Test
+    public void testParalleStream2() {
+
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14);
+        numbers.parallelStream().forEach(p -> {
+                    System.out.println(count());
+                }
+        );
+
+    }
+
+    private int count(){
+        int cnt = 0;
+        for (int i=0;i<10000000;i++){
+            cnt++;
+        }
+        return cnt;
+    }
+
 }
 

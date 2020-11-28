@@ -1,6 +1,7 @@
 package stringTest;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.junit.Test;
 
 import java.awt.*;
@@ -226,12 +227,47 @@ public class StringTest {
 
        System.out.println(s5);
 
+       String ss11 = "1,2,3,";
+       String ss22 = "1,2,3";
+
+        System.out.println(ss11.substring(ss11.length()-1));
+        String s11 =  StringUtils.substringBeforeLast("1,2,3,", ",");
+        String s12 =  StringUtils.substringBeforeLast("1,2,3", ",");
+
+        System.out.println(s11);
+        System.out.println(s12);
+
 
     }
 
     public static String strHandler(String str, Function<String, String> fun) {
         return fun.apply(str);
     }
+
+
+    @Test
+    public void testString(){
+//        String[] arr = {"1","2"};
+        String[] arr =null;
+        // 数组转字符串 org.apache.commons.lang3.ArrayUtils
+        String str2 = ArrayUtils.toString(arr, ","); // 数组转字符串(逗号分隔,首尾加大括号)
+        System.out.println(str2); // {0,1,2,3,4,5}
+    }
+
+
+    @Test
+    public void testString2() {
+        String[] arr = {"1", "2"};
+//        String[] arr = null;
+//数组转字符串 org.apache.commons.lang3.StringUtils
+        String str3 = StringUtils.join(arr); // 数组转字符串,其实使用的也是遍历
+        System.out.println(str3); // 012345
+        String str4 = StringUtils.join(arr, ","); // 数组转字符串(逗号分隔)(推荐)
+        System.out.println(str4); // 0,1,2,3,4,5
+
+
+    }
+
 
 
 }

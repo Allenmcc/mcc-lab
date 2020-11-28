@@ -23,22 +23,34 @@ public class GroupByTest {
         List<Fruit> fruitList = Lists.newArrayList(
                 new Fruit("apple", 6.0),
                 new Fruit("apple", 6.0),
+                new Fruit("apple", 7.0),
                 new Fruit("banana", 7.0),
                 new Fruit("banana", 7.0),
                 new Fruit("banana", 7.0),
                 new Fruit("grape", 8.0));
 
+//        groupingBy 没有第二个参数,直接toList()
+        Map<String, List<Fruit>> defaultMap = fruitList.stream().collect(Collectors.groupingBy(Fruit::getName));
 
-        Function<Fruit,List<Object>> compositeKey = p-> Arrays.asList(p.getName(),p.getPrice(),null);
-       //key是集合Arrays.asList(p.getName(),p.getPrice())
+        System.out.println(defaultMap);
 
-        Map<Object, Long> mapp = fruitList.stream().collect(Collectors.groupingBy(compositeKey,Collectors.counting()));
+        //多个key重复groupBy
+        Function<Fruit, List<Object>> compositeKey = p -> Arrays.asList(p.getName(), p.getPrice(), null);
+        //key是集合Arrays.asList(p.getName(),p.getPrice())
+
+        Map<Object, Long> mapp = fruitList.stream().collect(Collectors.groupingBy(compositeKey, Collectors.counting()));
         //数量大于1输出
-        for (Map.Entry<Object,Long> entry:mapp.entrySet()){
-            if(entry.getValue()>=2){
-                System.out.println("包含重复"+entry.getKey());
+        for (Map.Entry<Object, Long> entry : mapp.entrySet()) {
+            if (entry.getValue() >= 2) {
+                System.out.println("包含重复" + entry.getKey());
             }
         }
+
+
+        Function<Fruit, List<Object>> compositeKey2 = p -> Arrays.asList(p.getName());
+
+        Map<Object, List<Double>> mapOList = fruitList.stream().collect(Collectors.groupingBy(compositeKey2, Collectors.mapping(Fruit::getPrice,Collectors.toList())));
+
 
         Map<String, Long> map = fruitList.stream().
                 collect(Collectors.groupingBy(Fruit::getName, Collectors.counting()));
@@ -54,9 +66,9 @@ public class GroupByTest {
                 fruitList.stream().collect(Collectors.groupingBy(Fruit::getName));
         System.out.println(groupMap);
 
-
-        Map<org.springframework.data.util.Pair<String,Double>, List<Fruit>> groupMapPair =
-                fruitList.stream().collect(Collectors.groupingBy( p-> org.springframework.data.util.Pair.of(p.getName(),p.getPrice())));
+        //两个key重复groupBy
+        Map<org.springframework.data.util.Pair<String, Double>, List<Fruit>> groupMapPair =
+                fruitList.stream().collect(Collectors.groupingBy(p -> org.springframework.data.util.Pair.of(p.getName(), p.getPrice())));
         System.out.println(groupMapPair);
 
 

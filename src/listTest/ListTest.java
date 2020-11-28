@@ -33,6 +33,10 @@ public class ListTest {
 
         list1.addAll(list222);
 
+        List<List<Integer>> listLists = Lists.newArrayList();
+        listLists.add(list1);
+        listLists.add(list33);
+
         final int[] tmp = new int[10];
 //        final int[] tmp = {0,1};
 
