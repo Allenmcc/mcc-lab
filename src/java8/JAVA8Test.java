@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -175,13 +176,13 @@ public class JAVA8Test {
     public void testParalleStream(){
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
+//
+//        numbers.parallelStream().forEach(p->{
+//            System.out.println("aa"+Thread.currentThread()+p);
+//        });
 
-        numbers.parallelStream().forEach(p->{
-            System.out.println("aa"+Thread.currentThread()+p);
-        });
 
-
-//        中间操作之间也是没有顺序
+//        中间操作(结果是Stream map,filter)之间也是没有顺序
         numbers.parallelStream()
                 .map(p -> {
                     System.out.println("a:" + Thread.currentThread()+ p);
@@ -192,6 +193,9 @@ public class JAVA8Test {
                     return p * 10;
                 })
                 .forEach(p -> System.out.println("c:" + Thread.currentThread() + p));
+
+
+        System.out.println("---------------------------->");
 
         //numbers 没有变,如果numbers是对象会变
         numbers.parallelStream().map(p -> {
@@ -228,6 +232,24 @@ public class JAVA8Test {
             cnt++;
         }
         return cnt;
+    }
+
+    /**
+     * https://www.cnblogs.com/sueyyyy/p/13079525.html
+     */
+    @Test
+    public void testStream() {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 10000; i++) {
+            list.add(i);
+        }
+        System.out.println(list.size());
+        List<Integer> streamList = new ArrayList<>();  //线程不安全 <1000
+//        List<Integer> streamList = new CopyOnWriteArrayList<>();  //线程安全
+//        List<Integer> streamList =  Collections.synchronizedList(Arrays.asList());
+        list.parallelStream().forEach(streamList::add);
+//        List<Integer> res= list.parallelStream().filter(p->p>=0).collect(Collectors.toList());
+        System.out.println(streamList.size());
     }
 
 }

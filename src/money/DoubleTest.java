@@ -1,5 +1,7 @@
 package money;
 
+import org.junit.Test;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -122,8 +124,8 @@ public class DoubleTest {
         double ad2 = 30 / 300;
         double ad3 = 1 / 2 + 0.5;
 
-        double ttt= 10;
-        double ad11= 3.0;
+        double ttt = 10;
+        double ad11 = 3.0;
 
         System.out.println(ad1);
         System.out.println(ad11 - 2.6);
@@ -133,6 +135,37 @@ public class DoubleTest {
         System.out.println(ttt / 100);
         System.out.println(10 / 100);
 
+
+    }
+
+    @Test
+    public void compare() {
+
+        BigDecimal a = new BigDecimal(101);
+        BigDecimal b = new BigDecimal(111);
+
+        //使用compareTo方法比较
+        //注意：a、b均不能为null，否则会报空指针
+        if (a.compareTo(b) == -1) {
+            System.out.println("a小于b");
+        }
+
+        if (a.compareTo(b) == 0) {
+            System.out.println("a等于b");
+        }
+
+        if (a.compareTo(b) == 1) {
+            System.out.println("a大于b");
+        }
+
+        if (a.compareTo(b) > -1) {
+            System.out.println("a大于等于b");
+        }
+
+        if (a.compareTo(b) < 1) {
+            System.out.println("a小于等于b");
+
+        }
 
     }
 

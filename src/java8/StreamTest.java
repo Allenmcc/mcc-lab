@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 /**
  * 看方法的返回值,可以看到中间操作的返回类型都是Stream，而终结操作的返回类型是其他的结果，也就不能在进行流的链式操作了。
  *
+ * https://blog.csdn.net/weixin_42596738/article/details/109387353
  * Stream的中间操作：中间操作在一个流上进行操作，返回结果是一个新的流。这些操作是延迟执行
  *
  *   过滤 filter
@@ -23,19 +24,22 @@ import java.util.stream.Stream;
  *   其他 peek
  *
  * Stream的终止操作:终结操作遍历流来产生一个结果或是副作用。在一个流上执行终结操作之后，该流被消费， 无法再次被消费
- *
- * * allMatch 是否匹配所有
- * * anyMatch 是否匹配一个
- * * noneMatch 是否没有匹配一个
+ *  1.匹配与查找
+ * * allMatch(Predicate p)  是否匹配所有
+ * * anyMatch(Predicate p) - 是否匹配一个
+ * * noneMatch(Predicate p)  是否没有匹配一个
  * * findFirst 返回第一个
- *
  * * count 返回总数
- * * max 返回最大
- * * min 返回最小
+ * * max(Comparator c)  返回最大
+ * * min(Comparator c)  返回最小
+ * * forEach(Consumer c) -内部迭代
  *
- * * reduce 归约 将元素连续操作得到结果
+ *  2.归约
+ * * reduce(T iden,BinaryOperator b) :可以将流中元素反复结合起来，得到一个值，返回T
+ * * reduce(BinaryOperator b) :可以将流中元素反复结合起来，得到一个值，返回一个Optional< T >
  *
- * * collect 收集
+ * * 3.收集
+ *    collect(Collector c)
  *   1 将流转换成其他的形式(其他集合)
  *   2 接收Collector接口 用于Stream中元素各种汇总      特例 Collectors.joining()拼接字符串
  */
@@ -310,6 +314,22 @@ public class StreamTest {
         })));
 
         System.out.println(mapMap);
+
+//        Map<Status, List<Employee>> map2 =
+        List<Employee> employees = Lists.newArrayList();
+                employeeList.stream().collect(Collectors.groupingBy(Employee::getStatus)).forEach((o1,o2)->{
+                    System.out.println(o1);  //Employee::getStatus
+                    o2.stream().reduce((p1,p2)->{
+                        System.out.println(p1);
+                        System.out.println(p2);
+                        Employee employee = new Employee();
+                        employee.setAge(p1.getAge()+p2.getAge());
+                        return employee;
+//                    }).ifPresent(System.out::println);
+                    }).ifPresent(employees::add);
+                });
+
+        System.out.println(employees);
 
     }
 
