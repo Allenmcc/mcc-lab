@@ -45,7 +45,7 @@ public class JAVA8Test {
 
        System.out.println(outputStream.mapToInt(n->n).sum());
 
-        System.out.println(outputStream.collect(Collectors.toList()));
+//        System.out.println(outputStream.collect(Collectors.toList()));
 
 //        System.out.println(outputStream.collect(Collectors.toSet()));
         List<Integer> result = null ;

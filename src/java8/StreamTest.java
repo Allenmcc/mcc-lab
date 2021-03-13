@@ -354,6 +354,9 @@ public class StreamTest {
         System.out.println(dss.getSum());
     }
 
+    /**
+     *
+     */
     @Test
     public void testJoin() {
         String str = employeeList.stream().map(Employee::getName)

@@ -268,6 +268,14 @@ public class StringTest {
 
     }
 
+    @Test
+    public void testStringContains(){
+        String arr ="11,22,33";
+        System.out.println(arr.contains("2")); // {0,1,2,3,4,5}
+    }
+
+
+
 
 
 }

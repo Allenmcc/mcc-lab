@@ -176,4 +176,21 @@ public class TreeMapTest {
             return 0;
         }
     }
+
+    @Test
+    public void map2TreeMap(){
+        Map<String, String> testMap = new HashMap<String, String>();
+        testMap.put("1", "3");
+        testMap.put("3", "4");
+        testMap.put("2", "1");
+        testMap.put("4", "2");
+        for (String key : testMap.keySet()) {
+            System.out.println(key + "=>" + testMap.get(key));
+        }
+        System.out.println("========================");
+        Map<String, String> testMap2 = new TreeMap<String, String>(testMap);
+        for (String key : testMap2.keySet()) {
+            System.out.println(key + "=>" + testMap2.get(key));
+        }
+    }
 }

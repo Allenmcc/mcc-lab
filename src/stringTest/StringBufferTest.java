@@ -3,9 +3,11 @@ package stringTest;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang.StringUtils;
 import org.apache.xmlbeans.impl.xb.xsdschema.Attribute;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by danny on 2017/1/18.
@@ -42,6 +44,21 @@ public class StringBufferTest {
 
 
 
+    }
+
+
+    @Test
+    public void generateBackNoWithPrefix() {
+        StringBuffer shortBuffer = new StringBuffer();
+        shortBuffer.append("R");
+        Random random = new Random();
+        String result = "";
+        for (int i = 0; i < 8; i++) {
+            //首字母不能为0
+            result += (random.nextInt(10));
+        }
+        shortBuffer.append(result);
+        System.out.printf(shortBuffer.toString());
     }
 
 
