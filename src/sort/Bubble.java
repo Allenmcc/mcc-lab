@@ -8,6 +8,7 @@ public class Bubble {
     private static void sort(int[] nums) {
         for (int i = 0; i <= nums.length - 1; i++) {
 
+            //每次冒泡个最大的到最后面,遍历从头开始
             //j+1  所有不能==nums.length - i,取边界值试一下
             for (int j = 0; j < nums.length - i - 1; j++) {
 
@@ -23,10 +24,26 @@ public class Bubble {
     }
 
 
+    private static void bo(int[] nums) {
+
+        for (int i = 0; i <= nums.length -1; i++) {
+
+            for (int j = 0; j < nums.length - i -1; j++) {
+
+                if (nums[j] > nums[j+1]) {
+                    int tmp = nums[j];
+                    nums[j] = nums[j+1];
+                    nums[j+1] = tmp;
+                }
+            }
+        }
+
+    }
 
     public static void main(String[] args) {
         int []nums = {87, 45, 78, 32, 17, 65, 53, 9, 122};
-        sort(nums);
+//        sort(nums);
+        bo(nums);
         for (int a:nums) {
             System.out.print(a + " ");
         }

@@ -25,8 +25,8 @@ public class ListTest {
         list1.add(6);
         list1.add(7);
 
-        list33.add(4);
-        list33.add(40);
+//        list33.add(4);
+//        list33.add(40);
         list1.removeAll(list33);
 
 //        list1.clear();

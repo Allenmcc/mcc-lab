@@ -143,7 +143,13 @@ public class StringTest {
 
 
         String http= "http://";
-        System.out.print(http.replace("http:","https:"));
+
+        //字符串替换 replaceAll 正则替换
+        System.out.println(http.replace("http:","https:"));
+        System.out.println(http.replace("t","ps"));
+
+        //char 替换
+        System.out.println(http.replace('t','g'));
 
 
         String b= "";
@@ -275,6 +281,60 @@ public class StringTest {
     }
 
 
+    /**
+     * 验证回文字符串
+     * https://www.geekxh.com/1.3.%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B3%BB%E5%88%97/305.html#_02%E3%80%81%E5%9B%BE%E8%A7%A3%E6%95%99%E7%A8%8B
+     */
+    @Test
+    public void testHuiWenString() {
+
+        String a = "A man, a plan, a canal: Panama";
+
+        String a1 = a.toLowerCase().replaceAll("[^0-9a-z]", "");
+
+        System.out.println(a1);
+        char[] a2 = a1.toCharArray();
+        for (int i = 0; i < a2.length/2; i++) {
+            if (a2[i] != a2[a2.length - i - 1]) {
+                System.out.println("false");
+                return;
+            }
+        }
+        System.out.println("true");
+    }
+
+    @Test
+    public void testHuiWenString2() {
+
+        String a = "A man, a plan, a canal: Panama";
+
+        String a1 = a.toLowerCase();
+
+        System.out.println(a1);
+        char[] a2 = a1.toCharArray();
+        for (int i = 0,j=a2.length-1; i < a2.length;) {
+
+            if(!((a2[i]>='0' && a2[i]<='9')||(a2[i]>='a' && a2[i]<='z'))){
+                i++;
+                continue;
+            }
+
+
+            if(!((a2[j]>='0' && a2[j]<='9')||(a2[j]>='a' && a2[j]<='z'))){
+                j--;
+                continue;
+            }
+
+            if (a2[i] != a2[j]) {
+                System.out.println("false");
+                break;
+            }else {
+                i++;
+                j--;
+            }
+        }
+//        System.out.println("true");
+    }
 
 
 

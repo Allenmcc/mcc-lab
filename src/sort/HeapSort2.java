@@ -19,7 +19,7 @@ public class HeapSort2 {
         for (int i = len - 1; i > 0; i--) {
             swap(arr, 0, i);
             len--;
-            //交换之后的堆调整，从当前0节点开始
+            //交换之后的堆调整，从当前0节点开始,长度为需要排序的长度
             adjustHeap(arr, 0, len);
         }
         return arr;
@@ -34,7 +34,7 @@ public class HeapSort2 {
     }
 
 
-    //堆调整，i起点，len长度
+    //堆调整，i调整起点，len长度
     private static void adjustHeap(int[] arr, int i, int len) {
         int left = 2 * i + 1;
         int right = 2 * i + 2;
