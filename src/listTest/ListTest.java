@@ -37,6 +37,17 @@ public class ListTest {
         listLists.add(list1);
         listLists.add(list33);
 
+
+        LinkedList<Integer> listLinked = new LinkedList<>();
+        listLinked.add(1);
+        listLinked.add(2);
+        listLinked.add(3);
+        listLinked.add(4);
+        //删除队列头  LinkedList<Integer>
+       Integer re = listLinked.remove();
+
+        System.out.println(listLinked);
+
         final int[] tmp = new int[10];
 //        final int[] tmp = {0,1};
 

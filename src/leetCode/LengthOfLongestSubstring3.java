@@ -5,9 +5,10 @@ import java.util.Map;
 
 /**
  * 3. 无重复字符的最长子串
+ * https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/solution/hua-jie-suan-fa-3-wu-zhong-fu-zi-fu-de-zui-chang-z/
  * 滑动窗口
  */
-public class LengthOfLongestSubstring {
+public class LengthOfLongestSubstring3 {
 
     private static Integer longestStr(String s) {
 
@@ -34,9 +35,11 @@ public class LengthOfLongestSubstring {
     public static void main(String[] args) {
         String s = "abcabcbb";
         String s2 = "pwwkew";
-        Integer len = longestStr(s);
-        System.out.println(len);
-        System.out.println(lengthOfMy(s2));
+        String s3 = "abba";
+//        Integer len = longestStr(s);
+//        System.out.println(len);
+//        System.out.println(lengthOfMy(s2));
+        System.out.println(lengthOfMy(s3));
     }
 
     public static Integer lengthOfMy(String str) {
@@ -47,7 +50,9 @@ public class LengthOfLongestSubstring {
             Character c = str.charAt(end);
             //存在,start 重新获取
             if(map.containsKey(c)){
-                start = map.get(c);
+//                start = map.get(c);
+                //需要的,abba 这种情况,到第二个a的时候,如果只取map.get(c),那只能取第一个a的value=1 作为start,不符合预期.
+                start = Math.max(map.get(c),start);
             }
             ans = Math.max(ans, end - start + 1);
             map.put(c, end + 1);
