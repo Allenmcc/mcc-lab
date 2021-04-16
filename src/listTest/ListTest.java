@@ -154,6 +154,9 @@ public class ListTest {
         System.out.println(list11);
         System.out.println(list22);
 
+        String tt = null;
+        System.out.println(list11.contains(tt));
+
 
         Iterator<String> it = list11.iterator();
         while(it.hasNext()){
