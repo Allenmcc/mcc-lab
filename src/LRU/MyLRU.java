@@ -18,7 +18,7 @@ public class MyLRU extends LinkedHashMap {
     }
 
     @Override
-    protected boolean removeEldestEntry(Map.Entry eldest) {
+    public boolean removeEldestEntry(Map.Entry eldest) {
         return size() > maxSize;
     }
 
