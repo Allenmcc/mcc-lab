@@ -4,7 +4,7 @@ package leetCode;
  *
  */
 
- class ListNode {
+class ListNode {
     int val;
     ListNode next;
 
@@ -27,15 +27,31 @@ public class ReverseListOffer24 {
 
     public static ListNode reverseList(ListNode head) {
 
-        ListNode p = head ;  //前面的节点
+        ListNode p = head;  //前面的节点
         ListNode q = null;   //后面的节点
-        while (p != null){
+        while (p != null) {
             ListNode tmp = p.next;  // 暂存后继节点 p.next
             p.next = q;   // 修改 next 引用指向
             q = p;    //后面指向当前
             p = tmp;  //前面指向暂存的tmp
         }
         return q;
+    }
+
+    public static ListNode reverseList2(ListNode head) {
+
+        ListNode cur = head;
+        ListNode q = null;
+
+        while (cur != null) {
+            ListNode tmp = cur.next;
+            cur.next = q;
+            q = cur;
+            cur = tmp;
+        }
+
+        return q;
+
     }
 
     public static void main(String[] args) {
@@ -49,8 +65,10 @@ public class ReverseListOffer24 {
         node2.next = node3;
         node3.next = node4;
         node4.next = node5;
-        ListNode head2  =  reverseList(head);
-        System.out.println(head2.val);
+//        ListNode head2  =  reverseList(head);
+        ListNode head3 = reverseList2(head);
+//        System.out.println(head2.val);
+        System.out.println(1);
 
     }
 }
