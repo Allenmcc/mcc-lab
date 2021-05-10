@@ -57,7 +57,7 @@ public class ArraySum {
             dfs(arr, i, sum - arr[i], arrayList);
             //(不允许重复)
 //            dfs(arr, i+1, sum - arr[i], arrayList);
-            //出口返回后删除最后一个继续遍历
+            //出口返回后删除最后一个继续遍历,即回到上一层
             arrayList.remove(arrayList.size() - 1);
 
         }
