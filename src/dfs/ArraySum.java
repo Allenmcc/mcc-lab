@@ -45,6 +45,7 @@ public class ArraySum {
         }
         if (sum == 0 && !list.contains(arrayList)) {
             //new 对象，直接添加是引用，值会变
+//            list.add(arrayList);
             list.add(new ArrayList<Integer>(arrayList));
             return;
         }

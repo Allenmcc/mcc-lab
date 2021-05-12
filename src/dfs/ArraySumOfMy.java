@@ -22,10 +22,9 @@ public class ArraySumOfMy {
     public static List<List<Integer>> combinationSum(int arr[], int target) {
 
         Arrays.sort(arr);
+        List<Integer> arrayLists = new ArrayList<>();
 
-        for (int i = 0; i <= arr.length - 1; i++) {
-            dfs(arr, 0, target, new ArrayList<>());
-        }
+        dfs(arr, 0, target, arrayLists);
 
         return list;
 
@@ -38,12 +37,12 @@ public class ArraySumOfMy {
             return;
         }
 
-        if (target == 0) {
-            list.add(result);
+        if (target == 0 && !list.contains(result)) {
+            list.add(new ArrayList<>(result));
         }
 
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = start; i < arr.length; i++) {
             result.add(arr[i]);
             dfs(arr, i, target - arr[i], result);
             result.remove(result.size() - 1);
