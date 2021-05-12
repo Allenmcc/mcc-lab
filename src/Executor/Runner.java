@@ -4,7 +4,6 @@ package Executor;
  * Created by chunchen.meng on 2018/9/17.
  */
 public class Runner implements Runnable{
-//    public  class Runner implements Runnable{
 
         @Override
         public void run() {

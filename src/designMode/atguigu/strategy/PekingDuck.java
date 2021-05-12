@@ -1,5 +1,6 @@
 package designMode.atguigu.strategy;
 
+//继承 实现抽象方法
 public class PekingDuck extends Duck {
 
 	@Override

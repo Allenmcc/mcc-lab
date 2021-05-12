@@ -4,24 +4,22 @@ public class ToyDuck extends Duck{
 
 	
 	public ToyDuck() {
-		// TODO Auto-generated constructor stub
 		flyBehavior = new NoFlyBehavior();
 	}
 	
 	@Override
 	public void display() {
-		// TODO Auto-generated method stub
 		System.out.println("玩具鸭");
 	}
 
-	//��Ҫ��д��������з���
+	//不变的部分 可以重写父类的方法，也可以不重写
 	
 	public void quack() {
-		System.out.println("���Ѽ���ܽ�~~");
+		System.out.println("toy鸭叫~~");
 	}
 	
 	public void swim() {
-		System.out.println("���Ѽ������Ӿ~~");
+		System.out.println("toy鸭游泳");
 	}
 	
 	
