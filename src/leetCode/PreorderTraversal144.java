@@ -20,6 +20,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
+/**
+ * 二叉树先序遍历
+ */
 public class PreorderTraversal144 {
 
 
@@ -58,15 +62,14 @@ public class PreorderTraversal144 {
         List<Integer> result = preorderTraversal144.preorderTraversal(head);
         System.out.println(result);
 
-        List<Integer> test = Lists.newArrayList(1,2,3);
-        tesList(test);
-        System.out.println(test);
+//        List<Integer> test = Lists.newArrayList(1,2,3);
+//        System.out.println(test);
 
     }
 
-    public static void tesList(List<Integer> list){
-
-        list.add(232);
-
-    }
+//    public static void tesList(List<Integer> list){
+//
+//        list.add(232);
+//
+//    }
 }

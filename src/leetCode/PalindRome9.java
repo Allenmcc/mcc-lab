@@ -2,6 +2,7 @@ package leetCode;
 
 /**
  * 9. 回文数
+ * 字符串
  */
 public class PalindRome9 {
 

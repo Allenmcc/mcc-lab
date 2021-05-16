@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * 实现LRU
+ */
 public class LRUCache {
 
     int size;

@@ -1,5 +1,8 @@
 package leetCode;
 
+/**
+ * 二分查找
+ */
 public class MiddleSearch {
 
     public static int search(int[] nums, int target) {
