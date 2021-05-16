@@ -31,6 +31,7 @@ public class IsSameTree100 {
         if (p == null && q == null) {
             return true;
         }
+        //已经至少一个不为null
         //当其中一个为 null 另一个不为 null 时返回 false
         if (p == null || q == null) {
             return false;
