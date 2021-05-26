@@ -9,20 +9,26 @@ package leetCode;
 public class StrMultiply43 {
 
     public static void main(String[] args) {
-        String num1  = "123";
-        String num2  = "45";
+        String num1 = "123";
+        String num2 = "45";
         String result = multiply(num1,num2);
+
+//        System.out.println(isNumber(num1));
         System.out.println(result);
     }
 
     /**
      * 计算形式
-     *    num1
-     *  x num2
-     *  ------
-     *  result
+     * num1
+     * x num2
+     * ------
+     * result
      */
     public static String multiply(String num1, String num2) {
+        //校验字符串是否数字
+        if (!isNumber(num1) || !isNumber(num2)) {
+            return "0";
+        }
         if (num1.equals("0") || num2.equals("0")) {
             return "0";
         }
@@ -73,5 +79,12 @@ public class StrMultiply43 {
             carry = (x + y + carry) / 10;
         }
         return builder.reverse().toString();
+    }
+
+    private static boolean isNumber(String str) {
+        String reg = "^[0-9]+$";
+        //包含小数
+//        String reg = "^[0-9]+(.[0-9]+)?$";
+        return str.matches(reg);
     }
 }
