@@ -3,9 +3,11 @@ package leetCode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * 二叉树的层序遍历
+ * 层次遍历
  * https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
  */
 public class LevelOrder102 {
@@ -46,7 +48,7 @@ public class LevelOrder102 {
             List<Integer> tmp = new ArrayList<Integer>();
             //将队列中的元素都拿出来(也就是获取这一层的节点)，放到临时list中
             //如果节点的左/右子树不为空，也放入队列中
-            //遍历长度未当前的队列长度(添加子节点之前)
+            //遍历长度为当前的队列长度(添加子节点之前) 当前这一层
             for (int i = 0; i < size; ++i) {
                 TreeNode t = queue.remove();
                 tmp.add(t.val);
@@ -73,8 +75,8 @@ public class LevelOrder102 {
         TreeNode p3 = new TreeNode(3, p5, null);
         TreeNode p1 = new TreeNode(1, p2, p3);
 
-//        System.out.println(levelOrder(p1));
-        System.out.println(levelOrderOfMy(p1));
+        System.out.println(levelOrder(p1));
+//        System.out.println(levelOrderOfMy(p1));
 
     }
 

@@ -1,9 +1,15 @@
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+
 /**
- * Created by danny on 16/1/12.
+ * 字符串全排列
+ * 回溯
+ * https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/solution/mian-shi-ti-38-zi-fu-chuan-de-pai-lie-hui-su-fa-by/
  */
 public class biroTest {
 
-    public  static void permutation(char[] buf, int start, int end) {
+    public static void permutation(char[] buf, int start, int end) {
         if (start == end) {// 当只要求对数组中一个字母进行全排列时，只要就按该数组输出即可
             for (int i = 0; i <= end; i++) {
                 System.out.print(buf[i]);
@@ -24,14 +30,41 @@ public class biroTest {
         }
     }
 
-    public static void main(String arg[]){
+    static List<String> res = new LinkedList<>();//?
+    static char[] c;
 
-        char[] buf = new char[] { 'a', 'b', 'c','d'};
-        permutation(buf, 0, 3);
-        Integer a = 10;
-//        long b = a;
-//        Long b = (Long)a;
-//        int b=a;
-//
+    public static void dfs(int x) {
+        if (x == c.length - 1) {
+            res.add(String.valueOf(c));
+            return;
+        }
+        HashSet<Character> set = new HashSet<>();
+        for (int i = x; i < c.length; i++) {
+
+            if (set.contains(c[i])) continue;
+            set.add(c[i]);
+
+            char tmp = c[i];
+            c[i] = c[x];
+            c[x] = tmp;
+            dfs(x + 1);
+
+            tmp = c[i];
+            c[i] = c[x];
+            c[x] = tmp;
+
+        }
+    }
+
+    public static void main(String arg[]) {
+
+//        char[] buf = new char[] { 'a', 'b', 'c','d'};
+        char[] buf = new char[]{'a', 'b', 'a'};
+//        permutation(buf, 0, 2);
+        c = buf;
+        dfs(0);
+
+        System.out.println(res);
+
     }
 }
