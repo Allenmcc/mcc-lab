@@ -40,7 +40,7 @@ public class biroTest {
         }
         HashSet<Character> set = new HashSet<>();
         for (int i = x; i < c.length; i++) {
-
+            //这一层去重 剪枝
             if (set.contains(c[i])) continue;
             set.add(c[i]);
 

@@ -12,11 +12,15 @@ public class ArrayStringTest {
         List<String> strings = Lists.newArrayList("1","2","3");
         String string = "1,2,3";
 
+        //list2Array
         String[] strings1 = new String[strings.size()];
         String[] strings2 = strings.toArray(strings1);
         //引用传递
         strings2[1] = "22";
         System.out.println("list->Array"+strings1);
+        String[] strings3 = new String[strings.size()];
+        String[] a =  strings.toArray(strings3);
+
 
 
         List<String> list = Arrays.asList(strings1);
