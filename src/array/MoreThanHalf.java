@@ -11,7 +11,7 @@ import java.util.Map;
 public class MoreThanHalf {
     // 无序数组，有个数字出现的频率超过其他频率之和，求这个数
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
+
         int[] array = { 4, 1, 4, 1, 1, 1, 2, 1, 1, 4 };
         int[] array2 = { 5, 4, 2, 2, 3, 1, 2, 2, 2, 2 };
         int[] a3 = { 1, 2, 3, 4, 3, 6, 3, 3, 3, 3 };

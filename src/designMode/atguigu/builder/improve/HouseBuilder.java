@@ -8,7 +8,7 @@ public abstract class HouseBuilder {
 	//产品本身的创建过程
 	protected House house = new House();
 	
-	//将建造的流程写好，抽象的方法
+	//将建造的流程写好，抽象的方法,具体建造方法各自实现
 	public abstract void buildBasic();
 	public abstract void buildWalls();
 	public abstract void roofed();

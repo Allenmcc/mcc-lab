@@ -3,7 +3,7 @@ package designMode.atguigu.principle.singleresponsibility;
 public class SingleResponsibility2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		RoadVehicle roadVehicle = new RoadVehicle();
 		roadVehicle.run("Ħ�г�");
 		roadVehicle.run("����");

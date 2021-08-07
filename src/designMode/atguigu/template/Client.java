@@ -7,7 +7,7 @@ package designMode.atguigu.template;
 public class Client {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		//制作红豆豆浆
 		
 		System.out.println("----制作红豆豆浆----");

@@ -3,7 +3,7 @@ package designMode.atguigu.command;
 public class Client {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		
 		//使用命令设计模式，完成通过遥控器，对电灯的操作
 		

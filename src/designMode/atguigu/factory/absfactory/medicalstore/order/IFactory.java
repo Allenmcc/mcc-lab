@@ -6,6 +6,7 @@ import designMode.atguigu.factory.absfactory.medicalstore.good.IProtectiveSuit;
 
 /**
  * https://zhuanlan.zhihu.com/p/243277598
+ * 口罩，防护服是一个产品族，不同产品等级
  */
 public interface IFactory {
 

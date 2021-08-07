@@ -21,7 +21,7 @@ public class SymbolExpression extends Expression {
 	//因为SymbolExpression 是让其子类来实现，因此interpreter 是一个默认实现
 	@Override
 	public int interpreter(HashMap<String, Integer> var) {
-		// TODO Auto-generated method stub
+
 		return 0;
 	}
 }

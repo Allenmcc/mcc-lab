@@ -3,7 +3,7 @@ package designMode.atguigu.responsibilitychain;
 public class Client {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		//创建一个请求
 		PurchaseRequest purchaseRequest = new PurchaseRequest(1, 1000, 1);
 		

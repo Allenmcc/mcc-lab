@@ -3,7 +3,7 @@ package designMode.atguigu.visitor;
 public class Client {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		//创建ObjectStructure
 		ObjectStructure objectStructure = new ObjectStructure();
 		

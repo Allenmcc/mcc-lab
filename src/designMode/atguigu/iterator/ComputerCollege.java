@@ -19,13 +19,13 @@ public class ComputerCollege implements College {
 	
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
+
 		return "计算机学院";
 	}
 
 	@Override
 	public void addDepartment(String name, String desc) {
-		// TODO Auto-generated method stub
+
 		Department department = new Department(name, desc);
 		departments[numOfDepartment] = department;
 		numOfDepartment += 1;
@@ -33,7 +33,7 @@ public class ComputerCollege implements College {
 
 	@Override
 	public Iterator createIterator() {
-		// TODO Auto-generated method stub
+
 		return new ComputerCollegeIterator(departments);
 	}
 

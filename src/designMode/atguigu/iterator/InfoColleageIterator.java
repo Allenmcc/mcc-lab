@@ -17,7 +17,7 @@ public class InfoColleageIterator implements Iterator {
 	//判断lsit中还有没有下一个元素
 	@Override
 	public boolean hasNext() {
-		// TODO Auto-generated method stub
+
 		if(index >= departmentList.size() - 1) {
 			return false;
 		} else {
@@ -28,7 +28,7 @@ public class InfoColleageIterator implements Iterator {
 
 	@Override
 	public Object next() {
-		// TODO Auto-generated method stub
+
 		return departmentList.get(index);
 	}
 	

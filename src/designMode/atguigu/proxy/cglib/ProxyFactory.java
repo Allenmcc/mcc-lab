@@ -34,7 +34,7 @@ public class ProxyFactory implements MethodInterceptor {
 	//重写 intercept ，会调用目标对象的方法
 	@Override
 	public Object intercept(Object arg0, Method method, Object[] args, MethodProxy arg3) throws Throwable {
-		// TODO Auto-generated method stub
+
 		System.out.println("Cglib代理模式，开始");
 		Object returnVal = method.invoke(target, args);
 		System.out.println("Cglib代理模式，提交");

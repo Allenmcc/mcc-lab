@@ -1,11 +1,13 @@
 package designMode.atguigu.factory.factorymethod.pizzastore.order;
 
-import designMode.atguigu.factory.factorymethod.pizzastore.pizza.LDCheesePizza;
-import designMode.atguigu.factory.factorymethod.pizzastore.pizza.LDPepperPizza;
+import designMode.atguigu.factory.factorymethod.pizzastore.pizza.BJCheesePizza;
+import designMode.atguigu.factory.factorymethod.pizzastore.pizza.BJPepperPizza;
 import designMode.atguigu.factory.factorymethod.pizzastore.pizza.Pizza;
 
-
-public class LDOrderPizza extends OrderPizza {
+/**
+ * 北京工厂
+ */
+public class BJOrderPizzaFactoryFactory extends OrderPizzaFactory {
 
 	
 	@Override
@@ -13,9 +15,9 @@ public class LDOrderPizza extends OrderPizza {
 	
 		Pizza pizza = null;
 		if(orderType.equals("cheese")) {
-			pizza = new LDCheesePizza();
+			pizza = new BJCheesePizza();
 		} else if (orderType.equals("pepper")) {
-			pizza = new LDPepperPizza();
+			pizza = new BJPepperPizza();
 		}
 		return pizza;
 	}

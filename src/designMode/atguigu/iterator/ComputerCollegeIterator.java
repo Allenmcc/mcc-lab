@@ -19,7 +19,7 @@ public class ComputerCollegeIterator implements Iterator {
 	//判断是否含有下一个元素
 	@Override
 	public boolean hasNext() {
-		// TODO Auto-generated method stub
+
 		if(position >= departments.length || departments[position] == null) {
 			return false;
 		}else {
@@ -30,7 +30,7 @@ public class ComputerCollegeIterator implements Iterator {
 
 	@Override
 	public Object next() {
-		// TODO Auto-generated method stub
+
 		Department department = departments[position];
 		position += 1;
 		return department;

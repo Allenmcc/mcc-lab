@@ -5,7 +5,9 @@ import designMode.atguigu.factory.absfactory.medicalstore.good.IProtectiveSuit;
 import designMode.atguigu.factory.absfactory.medicalstore.good.LowEndMask;
 import designMode.atguigu.factory.absfactory.medicalstore.good.LowEndProtectiveSuit;
 
-//低端端工厂
+/**
+ * 低端端工厂  口罩，防护服是一个产品族，不同产品等级
+ */
 public class LowEndFactory implements IFactory {
     @Override
     public IMask createMask() {

@@ -7,7 +7,7 @@ import java.io.InputStream;
 public class Decorator {
 
 	public static void main(String[] args) throws Exception{
-		// TODO Auto-generated method stub
+
 		
 		//˵��
 		//1. InputStream �ǳ�����, ��������ǰ�潲�� Drink

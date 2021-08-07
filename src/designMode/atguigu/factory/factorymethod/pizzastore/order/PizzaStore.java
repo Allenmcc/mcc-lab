@@ -6,12 +6,12 @@ public class PizzaStore {
 		String loc = "bj";
 		if (loc.equals("bj")) {
 			//创建北京口味的各种Pizza
-			new BJOrderPizza();
+			new BJOrderPizzaFactoryFactory();
 		} else {
 			//创建伦敦口味的各种pizza
-			new LDOrderPizza();
+			new LDOrderPizzaFactoryFactory();
 		}
-		// TODO Auto-generated method stub
+
 	}
 
 }

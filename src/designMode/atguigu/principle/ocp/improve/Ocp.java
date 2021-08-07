@@ -37,7 +37,7 @@ class Rectangle extends Shape {
 
 	@Override
 	public void draw() {
-		// TODO Auto-generated method stub
+
 		System.out.println(" 绘制其他图形 ");
 	}
 }
@@ -48,7 +48,7 @@ class Circle extends Shape {
 	}
 	@Override
 	public void draw() {
-		// TODO Auto-generated method stub
+
 		System.out.println(" ����Բ�� ");
 	}
 }
@@ -60,7 +60,7 @@ class Triangle extends Shape {
 	}
 	@Override
 	public void draw() {
-		// TODO Auto-generated method stub
+
 		System.out.println(" ���������� ");
 	}
 }
@@ -73,7 +73,7 @@ class OtherGraphic extends Shape {
 
 	@Override
 	public void draw() {
-		// TODO Auto-generated method stub
+
 		System.out.println(" ��������ͼ�� ");
 	}
 }

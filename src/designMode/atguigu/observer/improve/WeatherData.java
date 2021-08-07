@@ -52,14 +52,14 @@ public class WeatherData implements Subject {
 	//注册一个观察者
 	@Override
 	public void registerObserver(Observer o) {
-		// TODO Auto-generated method stub
+
 		observers.add(o);
 	}
 
 	//移除一个观察者
 	@Override
 	public void removeObserver(Observer o) {
-		// TODO Auto-generated method stub
+
 		if(observers.contains(o)) {
 			observers.remove(o);
 		}
@@ -68,7 +68,7 @@ public class WeatherData implements Subject {
 	//遍历所有的观察者，并通知
 	@Override
 	public void notifyObservers() {
-		// TODO Auto-generated method stub
+
 		for(int i = 0; i < observers.size(); i++) {
 			observers.get(i).update(this.temperatrue, this.pressure, this.humidity);
 		}

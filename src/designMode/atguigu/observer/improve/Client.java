@@ -3,7 +3,7 @@ package designMode.atguigu.observer.improve;
 public class Client {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		//创建一个WeatherData
 		WeatherData weatherData = new WeatherData();
 		

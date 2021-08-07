@@ -3,7 +3,7 @@ package designMode.atguigu.proxy.staticproxy;
 public class Client {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		//创建目标对象（被代理对象）
 		TeacherDao teacherDao = new TeacherDao();
 		

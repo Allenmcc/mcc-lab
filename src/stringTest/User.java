@@ -33,7 +33,7 @@ public class User implements Diffable<User>{
 
     @Override
     public DiffResult diff(User user) {
-        // TODO Auto-generated method stub
+
         return new DiffBuilder(this, user, ToStringStyle.SHORT_PREFIX_STYLE)
                 .append("age", this.getAge(), user.getAge())
                 .append("username", this.getUsername(), user.getUsername())

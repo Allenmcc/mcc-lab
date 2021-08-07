@@ -3,7 +3,7 @@ package designMode.atguigu.proxy.dynamic;
 public class Client {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		//创建目标对象
 		ITeacherDao target = new TeacherDao();
 		

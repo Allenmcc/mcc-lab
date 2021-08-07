@@ -6,16 +6,18 @@ import java.io.InputStreamReader;
 
 import designMode.atguigu.factory.factorymethod.pizzastore.pizza.Pizza;
 
-
-
-
-public abstract class OrderPizza {
+/**
+ * 抽象工厂：提供了创建披萨的接口，
+ * 调用者通过它访问具体工厂的工厂方法 newProduct() 来创建产品。
+ * 接口或者抽象类
+ */
+public abstract class OrderPizzaFactory {
 
 	//定义一个抽象方法，createPizza，让各个工厂子类去实现
 	abstract Pizza createPizza(String orderType);
 	
 	// 构造器
-	public OrderPizza() {
+	public OrderPizzaFactory() {
 		Pizza pizza = null;
 		String orderType; // 订购pizza类型
 		do {

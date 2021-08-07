@@ -3,7 +3,7 @@ package designMode.atguigu.composite;
 public class Client {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		
 		//从大到小创建对象
 		OrganizationComponent university = new University("清华大学", " 中国顶级大学 ");

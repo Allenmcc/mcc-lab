@@ -3,7 +3,7 @@ package designMode.JDKSRC.atguigu.jdk;
 public class FlyWeight {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		//如果 Integer.valueOf(x) x 在  -128 --- 127 ֱ直接，就是使用享元模式返回，如果不在
 		//范围内，则仍然 new
 		

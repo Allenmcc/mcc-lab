@@ -3,7 +3,7 @@ package designMode.atguigu.principle.segregation.improve;
 public class Segregation1 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		// ʹ��һ��
 		A a = new A();
 		a.depend1(new B()); // A��ͨ���ӿ�ȥ����B��

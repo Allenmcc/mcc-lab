@@ -6,7 +6,9 @@ import designMode.atguigu.factory.absfactory.medicalstore.good.IMask;
 import designMode.atguigu.factory.absfactory.medicalstore.good.IProtectiveSuit;
 
 
-//高端工厂
+/**
+ * 高端工厂  口罩，防护服是一个产品族，不同产品等级
+ */
 public class HighEndFactory implements IFactory {
     @Override
     public IMask createMask() {

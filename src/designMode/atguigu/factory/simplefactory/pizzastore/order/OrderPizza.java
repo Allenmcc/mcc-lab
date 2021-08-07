@@ -53,7 +53,7 @@ public class OrderPizza {
 			orderType = getType(); 
 			pizza = this.simpleFactory.createPizza(orderType);
 			
-			//输出pizza
+			//输出pizza  定义顺序
 			if(pizza != null) { //订购成功
 				pizza.prepare();
 				pizza.bake();

@@ -15,10 +15,10 @@ public class ConcreteMediator extends Mediator {
 
 	@Override
 	public void Register(String colleagueName, Colleague colleague) {
-		// TODO Auto-generated method stub
+
 		colleagueMap.put(colleagueName, colleague);
 
-		// TODO Auto-generated method stub
+
 
 		if (colleague instanceof Alarm) {
 			interMap.put("Alarm", colleagueName);
@@ -37,7 +37,7 @@ public class ConcreteMediator extends Mediator {
 	//2.中介者在这个方法，协调各个具体的同事对象，完成任务
 	@Override
 	public void GetMessage(int stateChange, String colleagueName) {
-		// TODO Auto-generated method stub
+
 
 		//处理闹钟发出的消息
 		if (colleagueMap.get(colleagueName) instanceof Alarm) {
@@ -63,7 +63,7 @@ public class ConcreteMediator extends Mediator {
 
 	@Override
 	public void SendMessage() {
-		// TODO Auto-generated method stub
+
 
 	}
 

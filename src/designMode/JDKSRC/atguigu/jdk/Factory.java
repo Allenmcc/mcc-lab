@@ -5,7 +5,7 @@ import java.util.Calendar;
 public class Factory {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		// getInstance �� Calendar ��̬����
 		Calendar cal = Calendar.getInstance();
 	    // ע���·��±��0��ʼ������ȡ�·�Ҫ+1

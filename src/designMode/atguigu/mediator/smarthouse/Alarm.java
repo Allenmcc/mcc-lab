@@ -17,7 +17,7 @@ public class Alarm extends Colleague {
 
 	@Override
 	public void SendMessage(int stateChange) {
-		// TODO Auto-generated method stub
+
 		//调用中介者对象的getMessage
 		this.GetMediator().GetMessage(stateChange, this.name);
 	}

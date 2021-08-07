@@ -18,20 +18,20 @@ public class InfoCollege implements College {
 	
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
+
 		return "信息工程学院";
 	}
 
 	@Override
 	public void addDepartment(String name, String desc) {
-		// TODO Auto-generated method stub
+
 		Department department = new Department(name, desc);
 		departmentList.add(department);
 	}
 
 	@Override
 	public Iterator createIterator() {
-		// TODO Auto-generated method stub
+
 		return new InfoColleageIterator(departmentList);
 	}
 

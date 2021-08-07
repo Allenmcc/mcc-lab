@@ -15,7 +15,7 @@ public class OrderPizza2 {
 		
 		do {
 			orderType = getType();
-			//依赖 聚合
+			//依赖 聚合  静态方法
 			pizza = SimpleFactory.createPizza2(orderType);
 
 			// 订购pizza

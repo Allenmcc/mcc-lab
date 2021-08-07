@@ -6,7 +6,7 @@ public class Coffee  extends Drink {
 	//公共部分,获得改产品费用
 	@Override
 	public float cost() {
-		// TODO Auto-generated method stub
+
 		return super.getPrice();
 	}
 

@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class Client {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		
 		Originator originator = new Originator();
 		Caretaker caretaker = new Caretaker();

@@ -12,14 +12,14 @@ public class Decorator extends Drink {
 	//费用:包装产品价格+主题产品费用
 	@Override
 	public float cost() {
-		// TODO Auto-generated method stub
+
 		// getPrice 自己的价格
 		return super.getPrice() + obj.cost();
 	}
 	
 	@Override
 	public String getDes() {
-		// TODO Auto-generated method stub
+
 		// obj.getDes() 输出被装饰者信息
 		return des + " " + getPrice() + " && " + obj.getDes();
 	}

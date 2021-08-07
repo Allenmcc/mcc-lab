@@ -3,7 +3,7 @@ package designMode.atguigu.memento.game;
 public class Client {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		//创建游戏角色
 		GameRole gameRole = new GameRole();
 		gameRole.setVit(100);

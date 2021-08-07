@@ -3,7 +3,7 @@ package designMode.atguigu.flyweight;
 public class Client {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 
 		// 创建一个工厂类
 		WebSiteFactory factory = new WebSiteFactory();

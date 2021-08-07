@@ -7,7 +7,7 @@ import java.util.Comparator;
 public class Strategy {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		//数组
 		Integer[] data = { 9, 1, 2, 8, 4, 3 };
 		// 实现升序排序，返回-1放左边，1放右边，0保持不变

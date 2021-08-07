@@ -32,7 +32,7 @@ public class ReflectTest {
      * @throws NoSuchMethodException
      */
     public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, SecurityException, NoSuchFieldException, NoSuchMethodException {
-        // TODO Auto-generated method stub
+
 
         //Demo1.  通过Java反射机制得到类的包名和类名
         Demo1();

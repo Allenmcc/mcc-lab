@@ -11,7 +11,7 @@ public class Curtains extends Colleague {
 
 	@Override
 	public void SendMessage(int stateChange) {
-		// TODO Auto-generated method stub
+
 		this.GetMediator().GetMessage(stateChange, this.name);
 	}
 
