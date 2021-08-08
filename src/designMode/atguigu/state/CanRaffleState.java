@@ -10,9 +10,9 @@ import java.util.Random;
 public class CanRaffleState extends State {
 
     //关联关系,双向一对一
-    RaffleActivity activity;
+    RaffleActivityContext activity;
 
-    public CanRaffleState(RaffleActivity activity) {
+    public CanRaffleState(RaffleActivityContext activity) {
         this.activity = activity;
     }
 

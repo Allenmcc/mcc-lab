@@ -8,9 +8,9 @@ package designMode.atguigu.state;
 public class DispenseState extends State {
 
 	 // 初始化时传入活动引用，发放奖品后改变其状态
-    RaffleActivity activity;
+    RaffleActivityContext activity;
 
-    public DispenseState(RaffleActivity activity) {
+    public DispenseState(RaffleActivityContext activity) {
         this.activity = activity;
     }
 

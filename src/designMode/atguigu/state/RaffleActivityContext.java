@@ -1,12 +1,12 @@
 package designMode.atguigu.state;
 
 /**
- * 抽奖活动
+ * 抽奖活动 context
  * 
  * @author Administrator
  *
  */
-public class RaffleActivity {
+public class RaffleActivityContext {
 
 	// state 表示活动的当前状态，是变化
     State state = null;
@@ -24,18 +24,18 @@ public class RaffleActivity {
     //构造器
     //1.初始化当前状态 noRaffleState （即不能抽奖状态）
     //2. 初始化奖品的数量
-    public RaffleActivity( int count) {
-        //不能抽奖状态
+    public RaffleActivityContext(int count) {
+        //状态初始化 不能抽奖状态
         this.state = getNoRaffleState();
         this.count = count;
     }
 
-    //扣分，调用当前状态的deductMoney
+    //扣分，调用当前状态的deductMoney  状态切换
     public void deductMoney(){
         state.deductMoney();
     }
 
-    //抽奖
+    //抽奖 状态切换
     public void raffle(){
     	// 如果当前状态是抽奖成功
         if(state.raffle()){

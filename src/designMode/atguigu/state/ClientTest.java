@@ -9,7 +9,7 @@ public class ClientTest {
 
 	public static void main(String[] args) {
 		// 创建活动对象，奖品有一个奖品
-        RaffleActivity activity = new RaffleActivity(1);
+        RaffleActivityContext activity = new RaffleActivityContext(1);
 
         // 连续抽300次奖品
         for (int i = 0; i < 30; i++) {

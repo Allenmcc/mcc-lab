@@ -9,9 +9,9 @@ package designMode.atguigu.state;
 public class DispenseOutState extends State {
 
 	// 初始化时传入活动引用
-    RaffleActivity activity;
+    RaffleActivityContext activity;
 
-    public DispenseOutState(RaffleActivity activity) {
+    public DispenseOutState(RaffleActivityContext activity) {
         this.activity = activity;
     }
 
