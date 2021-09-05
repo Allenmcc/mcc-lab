@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by allen
+ * 具体迭代器：婺源景点迭代器
  */
 public class WyViewSpotIterator implements ViewSpotIterator {
 
