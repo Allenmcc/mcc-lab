@@ -2,7 +2,8 @@ package designMode.atguigu.proxy.staticproxy;
 
 //代理对象，静态代理
 public class TeacherDaoProxy implements ITeacherDao{
-	
+
+	//对象结构型模式
 	private ITeacherDao target; // 目标对象，通过接口来聚合
 	
 	
