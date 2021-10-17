@@ -14,16 +14,22 @@ public class CoffeeBar {
 		// 动态的将新功能附加到对象上,开闭原则(OCP)
 		order = new Milk(order);
 
+		//cost  算总价
 		System.out.println("order 加入一份牛奶 费用 = " + order.cost());
+		//price 单品价格
+		System.out.println("order 加入一份牛奶 费用 getPrice = " + order.getPrice());
 		System.out.println("order 加入一份牛奶 描述 = " + order.getDes());
 
 		// 3. order 加入一份巧克力
+		// 动态的将新功能附加到对象上，obj （LongBlack+一份牛奶）
 		order = new Chocolate(order);
 
 		System.out.println("order 加入一份牛奶 加入一份巧克力 费用 =" + order.cost());
+		System.out.println("order 加入一份牛奶 加入一份巧克力 费用 getPrice =" + order.getPrice());
 		System.out.println("order 加入一份牛奶 加入一份巧克力 描述 = " + order.getDes());
 
 		// 4. order 加入一份巧克力
+		// 动态的将新功能附加到对象上，obj （LongBlack+一份牛奶+一份巧克力）
 		order = new Chocolate(order);
 
 		System.out.println("order 加入一份牛奶 加入2份巧克力 费用 =" + order.cost());

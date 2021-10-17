@@ -1,5 +1,6 @@
 package designMode.atguigu.decorator;
 
+//具体产品
 public class ShortBlack extends Coffee{
 	
 	public ShortBlack() {
