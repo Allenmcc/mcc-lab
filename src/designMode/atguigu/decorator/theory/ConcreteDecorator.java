@@ -12,8 +12,8 @@ public class ConcreteDecorator extends Decorator {
     }
 
     public void operation() {
-        super.operation();
-        addedFunction();
+        super.operation();   //具体产品的操作
+        addedFunction();     //装饰器而外操作
     }
 
     public void addedFunction() {

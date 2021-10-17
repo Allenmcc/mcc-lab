@@ -6,7 +6,7 @@ public class Milk extends Decorator {
 
 	public Milk(Drink obj) {
 		//父类装饰类构造器,需要初始化父类里面主体
-		super(obj);
+		super(obj);  //传递对象，父类装饰器初始化
 		setDes(" 牛奶 ");
 		setPrice(2.0f); 
 	}
