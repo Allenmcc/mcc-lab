@@ -1,5 +1,8 @@
 package designMode.atguigu.flyweight;
 
+/**
+ * 具体享元（Concrete Flyweight）角色：实现抽象享元角色中所规定的接口。
+ */
 //具体的网站
 public class ConcreteWebSite extends WebSite {
 
@@ -14,6 +17,11 @@ public class ConcreteWebSite extends WebSite {
 	}
 
 
+	/**
+	 * User非享元（Unsharable Flyweight)角色：是不可以共享的外部状态，
+	 * 它以参数的形式注入具体享元的相关方法中。
+	 * @param user
+	 */
 	@Override
 	public void use(User user) {
 

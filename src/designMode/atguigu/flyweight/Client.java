@@ -11,7 +11,7 @@ public class Client {
 		// 客户要一个新闻形式发布的网站
 		WebSite webSite1 = factory.getWebSiteCategory("新闻");
 
-		
+		//是不可以共享的外部状态，它以参数的形式注入具体享元的相关方法中。
 		webSite1.use(new User("tom"));
 
 		// 客户要一个博客形式发布的网站
