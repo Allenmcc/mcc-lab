@@ -6,13 +6,14 @@ package designMode.atguigu.builder.improve;
 public class HouseDirector {
 	
 	HouseBuilder houseBuilder = null;
+//	HouseBuilder houseBuilder ;  //也可以
 
-	//构造器 houseBuilder
+	//构造器 houseBuilder  初始化houseBuilder
 	public HouseDirector(HouseBuilder houseBuilder) {
 		this.houseBuilder = houseBuilder;
 	}
 
-	//通过setter方法 传入 houseBuilder
+	//通过setter方法 传入 houseBuilder  初始化houseBuilder
 	public void setHouseBuilder(HouseBuilder houseBuilder) {
 		this.houseBuilder = houseBuilder;
 	}
@@ -22,6 +23,7 @@ public class HouseDirector {
 		houseBuilder.buildBasic();
 		houseBuilder.buildWalls();
 		houseBuilder.roofed();
+		//返回产品
 		return houseBuilder.buildHouse();
 	}
 	
