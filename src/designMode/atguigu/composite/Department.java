@@ -7,7 +7,6 @@ public class Department extends OrganizationComponent {
 	//构造器
 	public Department(String name, String des) {
 		super(name, des);
-		// TODO Auto-generated constructor stub
 	}
 
 	

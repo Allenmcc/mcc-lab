@@ -3,7 +3,6 @@ package designMode.atguigu.responsibilitychain;
 public class SchoolMasterApprover extends Approver {
 
 	public SchoolMasterApprover(String name) {
-		// TODO Auto-generated constructor stub
 		super(name);
 	}
 	

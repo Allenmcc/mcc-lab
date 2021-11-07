@@ -6,7 +6,6 @@ public class Alarm extends Colleague {
 	//构造器
 	public Alarm(Mediator mediator, String name) {
 		super(mediator, name);
-		// TODO Auto-generated constructor stub
 		//在创建Alarm同事对象时，将自己放入到ConcreteMediator对象中【集合】
 		mediator.Register(name, this);
 	}

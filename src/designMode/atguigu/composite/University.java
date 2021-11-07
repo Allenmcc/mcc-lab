@@ -11,7 +11,6 @@ public class University extends OrganizationComponent {
 	// 构造器
 	public University(String name, String des) {
 		super(name, des);
-		// TODO Auto-generated constructor stub
 	}
 
 	// 重写add
