@@ -1,18 +1,21 @@
 package designMode.atguigu.memento.theory;
 
+/**
+ * 备忘录（Memento）角色：负责存储发起人的内部状态，
+ * 在需要的时候提供这些内部状态给发起人。
+ */
 public class Memento {
-	private String state;
+    private String state;
 
-	//构造器
-	public Memento(String state) {
-		super();
-		this.state = state;
-	}
+    //构造器
+    public Memento(String state) {
+        super();
+        this.state = state;
+    }
 
-	public String getState() {
-		return state;
-	}
-	
-	
-	
+    public String getState() {
+        return state;
+    }
+
+
 }

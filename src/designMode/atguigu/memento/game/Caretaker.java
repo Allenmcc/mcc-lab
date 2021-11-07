@@ -3,6 +3,12 @@ package designMode.atguigu.memento.game;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ *
+ * 管理者（Caretaker）角色：对备忘录进行管理，
+ * 提供
+ */
+
 //守护者对象，保存游戏角色的状态
 public class Caretaker {
 

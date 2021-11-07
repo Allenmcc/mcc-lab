@@ -1,5 +1,10 @@
 package designMode.atguigu.memento.game;
 
+/**
+ * 快照
+ * 备忘录（Memento）角色：负责存储发起人的内部状态，
+ * 在需要的时候提供这些内部状态给发起人。
+ */
 public class Memento {
 
 	//攻击力
